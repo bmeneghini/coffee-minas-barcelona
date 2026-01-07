@@ -1,10 +1,825 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
-    <title>Meu site</title>
-  </head>
-  <body>
-    <h1>Hello, GitHub Pages 🚀</h1>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Plan: Importação de Café Brasil-Espanha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .print-break { page-break-before: always; }
+        
+        /* Dropdown Menu Logic */
+        .dropdown:hover .dropdown-menu { display: block; }
+        
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; }
+            .shadow-lg { box-shadow: none; }
+            
+            /* Ensure graphics print correctly */
+            .bg-green-600, .bg-purple-600, .bg-blue-600, .bg-amber-500 {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navegação / Cabeçalho -->
+    <header class="bg-white text-gray-800 shadow-md fixed w-full top-0 z-50 no-print">
+        <!-- Barra de Identidade Brasil-Espanha -->
+        <div class="h-1 w-full bg-gradient-to-r from-green-600 via-yellow-400 via-red-600 to-yellow-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo e Título -->
+            <div class="flex items-center gap-3">
+                <div class="flex items-center text-2xl relative">
+                    <!-- Representação do Catuaí (Cerejas e Folha) -->
+                    <i class="fas fa-circle text-red-600 -mr-2 z-10 text-lg"></i>
+                    <i class="fas fa-circle text-yellow-500 -mr-1 z-0 text-lg"></i>
+                    <i class="fas fa-leaf text-green-700 ml-1 text-xl transform -rotate-12"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-gray-900">Café Minas - Barcelona</h1>
+                    <span class="text-xs text-gray-500 uppercase tracking-widest block font-semibold">Plano de Negócios</span>
+                </div>
+            </div>
+
+            <!-- Menu Dropdown -->
+            <div class="relative dropdown">
+                <button class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-md font-semibold transition">
+                    <i class="fas fa-bars"></i> Menu
+                </button>
+                <div class="dropdown-menu absolute right-0 mt-0 w-56 bg-white rounded-md shadow-xl border border-gray-100 hidden z-50">
+                    <div class="py-1">
+                        <a href="#sumario" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700">1. Sumário</a>
+                        <a href="#mercado" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700 font-bold border-l-4 border-amber-500 bg-amber-50">2. Análise Mercado</a>
+                        <a href="#estrategia" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700 font-bold border-l-4 border-green-500 bg-green-50">3. Estratégia Produto</a>
+                        <a href="#logistica" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700">4. Logística</a>
+                        <a href="#empresa" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700">5. Abertura S.L.</a>
+                        <a href="#financeiro" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700">6. Custos Iniciais</a>
+                        <a href="#analise" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700 font-bold border-l-4 border-blue-600 bg-blue-50">7. Análise Lucratividade</a>
+                        <div class="border-t border-gray-100 my-1"></div>
+                        <a href="javascript:window.print()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700">
+                            <i class="fas fa-print mr-2"></i> Imprimir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-5xl mx-auto mt-28 px-4 sm:px-6 lg:px-8 pb-12">
+
+        <!-- Seção 1: Sumário Executivo -->
+        <section id="sumario" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-amber-600">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <span class="bg-amber-100 text-amber-800 p-2 rounded-lg mr-3"><i class="fas fa-bullseye"></i></span>
+                1. Sumário Executivo
+            </h2>
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                    <strong>Objetivo:</strong> Estabelecer uma operação de importação direta de café especial entre Minas Gerais (Brasil) e Barcelona (Espanha), eliminando intermediários e garantindo a rastreabilidade total do grão.
+                </p>
+                <p>
+                    <strong>Modelo de Negócio:</strong> Importação B2B de café verde (Green Coffee) com infraestrutura terceirizada na Espanha. O foco inicial é a prospecção de mercado através da distribuição estratégica de amostras para micro-torrefações e cafeterias de especialidade ("Third Wave Coffee").
+                </p>
+                <p>
+                    <strong>Diferencial Competitivo:</strong> Controle da cadeia desde a fazenda (infraestrutura própria em MG) até o armazenamento em Barcelona, permitindo flexibilidade na entrega e frescor do produto.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção 2: Análise de Mercado -->
+        <section id="mercado" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-yellow-500">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="bg-yellow-100 text-yellow-800 p-2 rounded-lg mr-3"><i class="fas fa-chart-line"></i></span>
+                2. Análise de Mercado: O Café na Espanha (2025-2026)
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-3">Potencial e Tendências</h3>
+                    <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                        A Espanha é um dos mercados de café mais vibrantes da Europa. Em 2024, o consumo continuou a crescer, com Barcelona consolidando-se como o "hub" do Café de Especialidade no sul da Europa.
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Crescimento Branded Coffee:</strong> O mercado de cafeterias de marca cresceu cerca de 3% ao ano, superando 2.200 lojas.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span><strong>Hábito Diário:</strong> 80% dos espanhóis consomem café diariamente. O consumo "out-of-home" (cafeterias/restaurantes) é um dos mais fortes da Europa.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mt-1 mr-2"></i>
+                            <span><strong>Terceira Onda:</strong> Há um "boom" de micro-torrefações em Barcelona (Gràcia, Poblenou), que buscam grãos verdes de alta pontuação (84+ SCA) e rastreáveis.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3 text-center">Cadeia de Valor Estimada (Barcelona)</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
+                            <span class="text-gray-600">Importação Café Verde (Landed Cost)</span>
+                            <span class="font-bold text-green-700">€ 5,50 - € 7,00 / kg</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
+                            <span class="text-gray-600">Venda B2B Verde (Para Torrefadores)</span>
+                            <span class="font-bold text-blue-700">€ 9,00 - € 12,00 / kg</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
+                            <span class="text-gray-600">Venda B2B Torrado (Para Cafeterias)</span>
+                            <span class="font-bold text-purple-700">€ 18,00 - € 28,00 / kg</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm pt-1">
+                            <span class="text-gray-600">Preço Varejo (Consumidor Final)</span>
+                            <span class="font-bold text-gray-900">€ 35,00 - € 45,00 / kg</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3 text-center italic">Baseado em preços de mercado de Especialidade 2025.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Estratégia Café Verde -->
+        <section id="estrategia" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-green-600">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="bg-green-100 text-green-800 p-2 rounded-lg mr-3"><i class="fas fa-leaf"></i></span>
+                3. Estratégia do Produto: Importação de Café Verde
+            </h2>
+
+            <div class="mb-6">
+                <p class="text-gray-700 leading-relaxed">
+                    A estratégia central é importar o produto como <strong>Matéria-Prima Agrícola (Café Verde)</strong>. Esta decisão é pautada em eficiência fiscal, segurança logística e alinhamento com a demanda dos torrefadores locais.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <!-- Vantagem 1 -->
+                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <h4 class="font-bold text-green-800 mb-2">1. Incentivo Fiscal (0%)</h4>
+                    <p class="text-sm text-green-900">
+                        A UE aplica <strong>0% de tarifa</strong> (Imposto de Importação) para café não torrado. Café torrado pagaria de 7.5% a 9% de imposto extra na entrada.
+                    </p>
+                </div>
+                <!-- Vantagem 2 -->
+                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <h4 class="font-bold text-green-800 mb-2">2. Shelf-Life Estendido</h4>
+                    <p class="text-sm text-green-900">
+                        O café verde mantém suas características por 12-18 meses. Isso reduz drasticamente o risco de perda de estoque em comparação ao torrado (validade ideal de 3 meses).
+                    </p>
+                </div>
+                <!-- Vantagem 3 -->
+                <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <h4 class="font-bold text-green-800 mb-2">3. Flexibilidade B2B</h4>
+                    <p class="text-sm text-green-900">
+                        Permite vender para <strong>Torrefações</strong> (que exigem o grão verde) ou contratar uma torra local ("Maquila") para atender cafeterias com produto fresco.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabela de Unit Economics -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <div class="bg-gray-100 px-6 py-3 border-b border-gray-200">
+                    <h3 class="font-bold text-gray-800">Unit Economics: Custo por Kg (Estimativa Operacional)</h3>
+                </div>
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Componente</th>
+                            <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Custo Est. (€/kg)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-3 font-medium text-gray-900">Custo do Café (FOB Santos)</td>
+                            <td class="px-6 py-3 text-right">€ 4,50</td>
+                            <td class="px-6 py-3 text-gray-500">Valor pago ao produtor + custos internos BR.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-3 font-medium text-gray-900">Frete Internacional + Seguro</td>
+                            <td class="px-6 py-3 text-right">€ 0,90</td>
+                            <td class="px-6 py-3 text-gray-500">Impacto alto devido ao baixo volume inicial (LCL).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-3 font-medium text-gray-900">Porto Destino + Aduana</td>
+                            <td class="px-6 py-3 text-right">€ 0,60</td>
+                            <td class="px-6 py-3 text-gray-500">Taxas fixas diluídas por kg.</td>
+                        </tr>
+                        <tr class="bg-gray-50 font-bold">
+                            <td class="px-6 py-3 text-gray-900">Custo Total (Landed Cost)</td>
+                            <td class="px-6 py-3 text-right text-green-700">€ 6,00</td>
+                            <td class="px-6 py-3 text-gray-500">Preço do produto posto no armazém BCN.</td>
+                        </tr>
+                        <tr class="bg-blue-50">
+                            <td class="px-6 py-3 font-bold text-blue-900">Preço Venda Alvo (Verde)</td>
+                            <td class="px-6 py-3 text-right font-bold text-blue-900">€ 10,00</td>
+                            <td class="px-6 py-3 text-blue-800">Margem Bruta estimada: ~40% (Markup 1.6x)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção 4: Logística -->
+        <section id="logistica" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-blue-600">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3"><i class="fas fa-ship"></i></span>
+                4. Estrutura Logística (Santos &rarr; Barcelona)
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Origem -->
+                <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg text-green-700 mb-3"><i class="fas fa-map-marker-alt mr-2"></i>Origem: Brasil</h3>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><strong>Consolidação:</strong> Preparação das sacas em MG (GrainPro + Juta).</li>
+                        <li><strong>Transporte Interno:</strong> Rodoviário até o Porto de Santos.</li>
+                        <li><strong>Exportação:</strong> Emissão de DU-E, Certificado de Origem e Fitossanitário (MAPA).</li>
+                        <li><strong>Modal:</strong> Marítimo LCL (Carga solta consolidada) - 1 Pallet inicial.</li>
+                    </ul>
+                </div>
+
+                <!-- Destino -->
+                <div class="bg-gray-50 p-5 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg text-blue-700 mb-3"><i class="fas fa-anchor mr-2"></i>Destino: Espanha</h3>
+                    <ul class="list-disc list-inside space-y-2 text-sm text-gray-600">
+                        <li><strong>Porto de Entrada:</strong> Porto de Barcelona.</li>
+                        <li><strong>Operador Logístico:</strong> <em>Molenbergnatie</em> ou similar (ZAL Port).</li>
+                        <li><strong>Regime:</strong> Depósito Aduaneiro (Impostos suspensos até a retirada).</li>
+                        <li><strong>Inspeção:</strong> Sanidad Exterior (Controle de micotoxinas e fitossanitário).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Estratégia 3PL -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-warehouse mr-2"></i> Estratégia de Terceirização e Armazém Alfandegado (3PL)
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Bloco 1: Exigência Legal -->
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-2">1. Conformidade Legal (RGSEAA)</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                                Para importar e distribuir café, a empresa deve possuir o <strong>Registro General Sanitario de Empresas Alimentarias y Alimentos</strong>. Residências e depósitos comuns ("trasteiros") <strong>não são autorizados</strong> para armazenar alimentos comerciais.
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                <strong>Solução:</strong> Ao contratar um operador especializado (ex: Molenbergnatie, Pacorini), utilizamos a licença sanitária deles. Eles atuam como a "garantia física" do produto perante a inspeção de saúde (*Sanidad Exterior*).
+                            </p>
+                        </div>
+
+                        <!-- Bloco 2: Zona Franca -->
+                        <div>
+                            <h4 class="font-bold text-gray-700 mb-2">2. Benefício da Zona Franca (Cash Flow)</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                                Operando em regime de <strong>Depósito Aduaneiro</strong>, o café chega à Espanha mas permanece "fiscalmente fora" do território.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                <li><strong>Suspensão de IVA:</strong> O imposto de 10% não é pago na chegada do navio.</li>
+                                <li><strong>Retirada Fracionada:</strong> Podemos retirar quantidades parciais (ex: apenas 1 saca de um pallet de 10).</li>
+                                <li><strong>Pagamento Diferido:</strong> O IVA é pago <strong>apenas sobre a quantidade retirada</strong>, no momento da saída. Isso evita descapitalização antecipada.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Bloco 3: Custos -->
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <h4 class="font-bold text-gray-700 mb-2">3. Estrutura de Custos e Operação</h4>
+                        <div class="bg-white p-4 rounded border border-gray-200 text-sm">
+                            <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <li class="flex flex-col">
+                                    <span class="font-bold text-gray-800">Unidade de Medida</span>
+                                    <span class="text-gray-600">Euro-pallet (aprox. 10 a 12 sacas ou ~700kg).</span>
+                                </li>
+                                <li class="flex flex-col">
+                                    <span class="font-bold text-gray-800">Armazenagem (Aluguel)</span>
+                                    <span class="text-gray-600">Cobrado mensalmente por posição de pallet ocupada. Custo variável conforme o estoque gira.</span>
+                                </li>
+                                <li class="flex flex-col">
+                                    <span class="font-bold text-gray-800">Manuseio (Handling)</span>
+                                    <span class="text-gray-600">Taxas pontuais para entrada (descarga/paletização) e saída (picking/preparação de pedido).</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloco: Cronograma de Transporte -->
+                <div class="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-clock mr-2"></i> Cronograma de Transporte (Estimativa)
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                        <div class="bg-white p-4 rounded border border-gray-100">
+                            <span class="block font-bold text-blue-800 mb-1">Porto a Porto (Marítimo)</span>
+                            <span class="text-gray-600">~18 a 22 dias (Rota Direta)</span>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-gray-100">
+                            <span class="block font-bold text-blue-800 mb-1">Desembaraço Aduaneiro</span>
+                            <span class="text-gray-600">~3 a 5 dias úteis (Após atracação)</span>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-green-100 border-l-4 border-l-green-500">
+                            <span class="block font-bold text-green-700 mb-1">Total Porta a Porta</span>
+                            <span class="text-gray-700">Estimativa de <strong>35 a 45 dias</strong> (MG &rarr; Armazém BCN).</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 5: Abertura da Empresa -->
+        <section id="empresa" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-purple-600">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="bg-purple-100 text-purple-800 p-2 rounded-lg mr-3"><i class="fas fa-briefcase"></i></span>
+                5. Constituição Legal da Importadora (Barcelona)
+            </h2>
+
+            <div class="mb-6">
+                <p class="text-gray-700 leading-relaxed">
+                    Para a formalização do negócio, a estrutura jurídica recomendada é a <strong>Sociedade Limitada (S.L.)</strong>. Este modelo é o mais utilizado na Espanha, pois protege o patrimônio pessoal dos sócios, limitando a responsabilidade ao capital investido, e oferece uma imagem corporativa sólida para negociações internacionais e obtenção de licenças sanitárias.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Coluna Esquerda: Processo e Prazos -->
+                <div>
+                    <h3 class="font-bold text-lg text-purple-800 mb-4 border-b border-purple-200 pb-2">Passo a Passo e Prazos</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">1</div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-bold text-gray-800">NIE e Denominação Social</h4>
+                                <p class="text-xs text-gray-600">Obtenção do NIE (sócios estrangeiros) e reserva do nome da empresa no Registro Mercantil.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">2</div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-bold text-gray-800">Conta Bancária e Capital Social</h4>
+                                <p class="text-xs text-gray-600">Depósito do Capital Social Mínimo (€ 3.000,00). Esse valor <strong>não é uma taxa</strong>; fica disponível na conta da empresa para uso operacional após a constituição.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">3</div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-bold text-gray-800">Escritura Pública (Notário)</h4>
+                                <p class="text-xs text-gray-600">Assinatura da constituição perante tabelião espanhol e obtenção do NIF Provisório.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">4</div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-bold text-gray-800">Registros Finais (Hacienda/Seg. Social)</h4>
+                                <p class="text-xs text-gray-600">Alta na atividade econômica (IAE), obtenção do NIF Definitivo e registro no VIES (ROI) para operações intracomunitárias.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 p-3 rounded mt-4 border border-purple-200">
+                            <p class="text-sm font-bold text-purple-900"><i class="fas fa-hourglass-half mr-2"></i>Tempo Estimado de Abertura:</p>
+                            <p class="text-sm text-purple-800">De 30 a 45 dias para operação completa (incluindo conta bancária ativa e NIF definitivo).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Certificações e Manutenção -->
+                <div class="space-y-6">
+                    <!-- Certificações -->
+                    <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                        <h3 class="font-bold text-gray-800 mb-3">Certificações Específicas (Importadora)</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span><strong>Número EORI:</strong> Registro obrigatório para aduana. Vinculado ao NIF da empresa. Solicitação rápida (24-48h).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span><strong>RGSEAA (Registro Sanitário):</strong> A parte mais burocrática. Necessária para armazenar e distribuir alimentos. Obtido através do contrato com o operador logístico (3PL) que já possui as instalações aprovadas.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Custos de Manutenção -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <h3 class="font-bold text-gray-800 mb-3">Custos Mensais de Manutenção (Estimativa)</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Gestoría (Contabilidade/Fiscal)</span>
+                                <span class="font-bold text-gray-800">~€ 100 - € 150 /mês</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                                <span class="text-gray-600">Segurança Social (Autónomo Societario)*</span>
+                                <span class="font-bold text-gray-800">~€ 300 /mês (por sócio)</span>
+                            </li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-2 italic">*Pelo menos um administrador deve estar inscrito. Existem tarifas reduzidas (Tarifa Plana) dependendo do histórico de residência.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 6: Financeiro (Atualizado) -->
+        <section id="financeiro" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-gray-600">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="bg-gray-200 text-gray-800 p-2 rounded-lg mr-3"><i class="fas fa-coins"></i></span>
+                6. Orçamento Completo e Capital de Giro (Setup + 6 Meses)
+            </h2>
+            
+            <p class="text-gray-700 mb-6 leading-relaxed">
+                Este orçamento detalha o <strong>Capital Inicial Necessário</strong> para constituir a empresa, importar o primeiro lote (10 sacas/600kg) e sustentar a operação fixa por 6 meses sem depender de vendas imediatas.
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                
+                <!-- Bloco Esquerdo: Tabela Detalhada -->
+                <div class="space-y-6">
+                    
+                    <!-- 1. Custo do Produto -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="bg-green-50 px-4 py-2 border-b border-green-100 flex justify-between items-center">
+                            <h3 class="font-bold text-green-800 text-sm">A. Produto e Logística (Lote Piloto)</h3>
+                            <span class="text-xs font-semibold text-green-700 bg-green-100 px-2 py-1 rounded">Variável</span>
+                        </div>
+                        <div class="p-4 text-sm space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Compra Café (600kg @ €4,50 FOB)</span>
+                                <span class="font-bold">€ 2.700,00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Frete Marítimo + Seguro (LCL)</span>
+                                <span class="font-bold">€ 600,00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Chegada BCN (THC + Aduana)</span>
+                                <span class="font-bold">€ 500,00</span>
+                            </div>
+                            <!-- NOVA LINHA: TORRA DE AMOSTRAS -->
+                            <div class="flex justify-between text-amber-700 bg-amber-50 p-2 -mx-2 rounded">
+                                <span class="font-semibold text-xs uppercase tracking-wide">Torra de Amostras (Maquila - 50kg)</span>
+                                <span class="font-bold">€ 250,00</span>
+                            </div>
+                            <div class="border-t border-gray-100 pt-2 flex justify-between font-bold text-gray-900">
+                                <span>Subtotal Mercadoria</span>
+                                <span>€ 4.050,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Custos de Abertura -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="bg-purple-50 px-4 py-2 border-b border-purple-100 flex justify-between items-center">
+                            <h3 class="font-bold text-purple-800 text-sm">B. Abertura da Empresa (One-off)</h3>
+                            <span class="text-xs font-semibold text-purple-700 bg-purple-100 px-2 py-1 rounded">Fixo Único</span>
+                        </div>
+                        <div class="p-4 text-sm space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Capital Social (Depósito Obrigatório)*</span>
+                                <span class="font-bold">€ 3.000,00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Taxas (Notário, Registro, NIF)</span>
+                                <span class="font-bold">~€ 800,00</span>
+                            </div>
+                            <div class="border-t border-gray-100 pt-2 flex justify-between font-bold text-gray-900">
+                                <span>Subtotal Legal</span>
+                                <span>€ 3.800,00</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1 italic">*O Capital Social vira caixa da empresa.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Manutenção 6 Meses -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                        <div class="bg-blue-50 px-4 py-2 border-b border-blue-100 flex justify-between items-center">
+                            <h3 class="font-bold text-blue-800 text-sm">C. Manutenção Fixa (Projeção 6 Meses)</h3>
+                            <span class="text-xs font-semibold text-blue-700 bg-blue-100 px-2 py-1 rounded">Recorrente</span>
+                        </div>
+                        <div class="p-4 text-sm space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Gestoría/Contábil (€150 x 6)</span>
+                                <span class="font-bold">€ 900,00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Seg. Social Administrador (€320 x 6)</span>
+                                <span class="font-bold">€ 1.920,00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Armazenagem 3PL (€40 x 6)</span>
+                                <span class="font-bold">€ 240,00</span>
+                            </div>
+                            <div class="border-t border-gray-100 pt-2 flex justify-between font-bold text-gray-900">
+                                <span>Subtotal Manutenção</span>
+                                <span>€ 3.060,00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bloco Direito: Resumo e Gráficos -->
+                <div class="bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col justify-between">
+                    
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-6">Investimento Total Estimado</h3>
+                        
+                        <div class="flex items-baseline gap-2 mb-2">
+                            <span class="text-4xl font-extrabold text-green-700">€ 10.910</span>
+                            <span class="text-gray-500 font-medium">EUR</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-8">Aproximadamente <strong>R$ 70.915,00</strong> (Cotação €1 = R$6,50)</p>
+
+                        <!-- Gráfico de Distribuição -->
+                        <h4 class="text-sm font-bold text-gray-700 mb-3">Distribuição do Capital</h4>
+                        
+                        <div class="space-y-4">
+                            <!-- Barra Produto -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="font-semibold text-green-700">Produto e Logística (37%)</span>
+                                    <span class="text-gray-600">€ 4.050</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 37%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Barra Legal/Setup -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="font-semibold text-purple-700">Legal e Capital Social (35%)</span>
+                                    <span class="text-gray-600">€ 3.800</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-purple-600 h-2.5 rounded-full" style="width: 35%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Barra Manutenção -->
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="font-semibold text-blue-700">Giro 6 Meses (28%)</span>
+                                    <span class="text-gray-600">€ 3.060</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 28%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-yellow-50 border border-yellow-100 rounded-lg p-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-lightbulb text-yellow-500 mt-1 mr-2"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-yellow-800">Nota sobre o Capital de Giro</h4>
+                                <p class="text-xs text-yellow-700 mt-1">
+                                    O valor de <strong>€ 3.000,00</strong> depositado como Capital Social compõe o caixa da empresa e pode ser usado imediatamente para cobrir despesas operacionais.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 7: Análise de Lucratividade (NOVO) -->
+        <section id="analise" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-blue-600 print-break">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <span class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3"><i class="fas fa-balance-scale"></i></span>
+                7. Projeção Financeira e Análise de Cenários
+            </h2>
+            
+            <p class="text-gray-700 mb-8 leading-relaxed">
+                Abaixo, comparamos a lucratividade e a complexidade operacional de dois modelos de venda: 
+                <strong>Cenário A (Venda de Café Verde para Torrefações)</strong> e 
+                <strong>Cenário B (Venda de Café Torrado para Cafeterias)</strong>.
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- Cenário A: Verde -->
+                <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <h3 class="text-lg font-bold text-green-800 mb-2">Cenário A: Trading (Café Verde)</h3>
+                    <p class="text-xs text-green-700 mb-4 uppercase font-semibold tracking-wide">Venda B2B para Micro-Torrefações</p>
+
+                    <div class="bg-white rounded p-4 space-y-3 text-sm shadow-sm border border-green-100 mb-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Preço de Venda (por kg)</span>
+                            <span class="font-bold text-gray-800">€ 10,00</span>
+                        </div>
+                        <div class="flex justify-between border-t border-dashed pt-2">
+                            <span class="text-gray-500">(-) Custo do Produto (Landed Cost)</span>
+                            <span class="text-red-600">- € 6,00</span>
+                        </div>
+                        <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
+                            <span class="font-bold text-green-800">Lucro Bruto (por kg)</span>
+                            <span class="font-bold text-green-600 text-lg">€ 4,00</span>
+                        </div>
+                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem: 40%</div>
+                    </div>
+
+                    <div class="text-sm text-green-900">
+                        <p class="mb-2"><strong>Pros:</strong> Baixo esforço operacional; Venda em volume (sacas de 60kg); Risco zero de produto "velho".</p>
+                        <p><strong>Contras:</strong> Menor barreira de entrada para concorrentes; Margem absoluta menor.</p>
+                    </div>
+                </div>
+
+                <!-- Cenário B: Torrado -->
+                <div class="bg-amber-50 rounded-xl p-6 border border-amber-200">
+                    <h3 class="text-lg font-bold text-amber-800 mb-2">Cenário B: Marca Própria (Café Torrado)</h3>
+                    <p class="text-xs text-amber-700 mb-4 uppercase font-semibold tracking-wide">Venda B2B para Cafeterias (Maquila)</p>
+
+                    <div class="bg-white rounded p-4 space-y-3 text-sm shadow-sm border border-amber-100 mb-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Preço de Venda (por kg)</span>
+                            <span class="font-bold text-gray-800">€ 22,00</span>
+                        </div>
+                        <div class="flex justify-between border-t border-dashed pt-2">
+                            <span class="text-gray-500">(-) Custo Verde Ajustado (Perda 18%*)</span>
+                            <span class="text-red-600">- € 7,32</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">(-) Serviço de Torra (Maquila)</span>
+                            <span class="text-red-600">- € 3,50</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">(-) Embalagem (Pacote + Válvula)</span>
+                            <span class="text-red-600">- € 1,00</span>
+                        </div>
+                        <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
+                            <span class="font-bold text-amber-800">Lucro Bruto (por kg)</span>
+                            <span class="font-bold text-amber-600 text-lg">€ 10,18</span>
+                        </div>
+                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem: 46% | *Necessário 1.22kg verde p/ 1kg torrado</div>
+                    </div>
+                    
+                    <div class="text-sm text-amber-900">
+                        <p class="mb-2"><strong>Pros:</strong> Maior valor agregado; Fidelização da marca nas cafeterias.</p>
+                        <p><strong>Contras:</strong> Validade curta (3 meses); Logística de entrega fracionada; Gestão de embalagens.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico Comparativo -->
+            <div class="mt-8">
+                <h4 class="font-bold text-gray-800 mb-4 text-center">Comparativo de Lucro Líquido por Kg Vendido</h4>
+                <div class="flex flex-col gap-4 max-w-2xl mx-auto">
+                    <!-- Barra A -->
+                    <div class="flex items-center">
+                        <div class="w-32 text-sm font-bold text-green-800 text-right pr-4">Verde (Trading)</div>
+                        <div class="flex-1 bg-gray-100 rounded-r-lg h-10 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 h-full bg-green-500 flex items-center px-3 text-white font-bold" style="width: 40%">
+                                € 4,00
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Barra B -->
+                    <div class="flex items-center">
+                        <div class="w-32 text-sm font-bold text-amber-800 text-right pr-4">Torrado (Marca)</div>
+                        <div class="flex-1 bg-gray-100 rounded-r-lg h-10 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 h-full bg-amber-500 flex items-center px-3 text-white font-bold shadow-lg" style="width: 100%">
+                                € 10,18
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-xs text-gray-500 mt-4 italic">
+                    Conclusão: Embora o café torrado gere <strong>2.5x mais lucro por kg</strong>, ele exige um esforço de venda e logística muito superior. A recomendação é iniciar com o Verde para garantir fluxo de caixa e introduzir o Torrado gradualmente.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Quebra de página para impressão -->
+        <div class="print-break"></div>
+
+        <!-- Seção 8: Anexos (Renumerado) -->
+        <section id="anexos" class="space-y-8">
+            
+            <!-- ANEXO I -->
+            <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-gray-600">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Anexo I: Comparativo Café Verde vs. Café Torrado</h3>
+                <div class="overflow-hidden border rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-800 text-white">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs uppercase tracking-wider">Critério</th>
+                                <th class="px-6 py-3 text-left text-xs uppercase tracking-wider">Café Verde (Recomendado)</th>
+                                <th class="px-6 py-3 text-left text-xs uppercase tracking-wider">Café Torrado</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200 text-sm">
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Imposto Importação (UE)</td>
+                                <td class="px-6 py-4 bg-green-50 text-green-800 font-bold">0% (Isento)</td>
+                                <td class="px-6 py-4 bg-red-50 text-red-800">~7.5%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Validade (Shelf Life)</td>
+                                <td class="px-6 py-4 text-gray-600">12 a 18 meses (Estável)</td>
+                                <td class="px-6 py-4 text-gray-600">1 a 3 meses (Crítico)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Logística Marítima</td>
+                                <td class="px-6 py-4 bg-green-50 text-green-800">Resistente (Dry Container)</td>
+                                <td class="px-6 py-4 bg-red-50 text-red-800">Sensível (Risco de oxidação no calor)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Público-Alvo BCN</td>
+                                <td class="px-6 py-4 text-gray-600">Micro-Torrefações (Alta demanda)</td>
+                                <td class="px-6 py-4 text-gray-600">Consumidor Final / Cafeterias sem torra</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-bold">Estratégia</td>
+                                <td class="px-6 py-4 text-blue-800 font-bold">Torrar localmente (Parceria)</td>
+                                <td class="px-6 py-4 text-gray-600">Vender produto acabado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ANEXO II (Atualizado para cores neutras/cinza) -->
+            <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-gray-600">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Anexo II: Checklist de Certificações e Rotulagem (2026)</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-gray-800 border-b border-gray-300 pb-2 mb-4">Documentação Obrigatória</h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-green-600"></i></span>
+                                <span class="ml-3"><strong>Certificado Fitossanitário:</strong> Emitido pelo MAPA (Brasil).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-green-600"></i></span>
+                                <span class="ml-3"><strong>Certificado de Origem:</strong> Para garantir isenção tarifária.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-green-600"></i></span>
+                                <span class="ml-3"><strong>EUDR (Desmatamento):</strong> Comprovante de geolocalização e não-desmatamento pós-2020 (Obrigatório em 2026).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-check-circle text-green-600"></i></span>
+                                <span class="ml-3"><strong>Número EORI:</strong> Registro do importador na UE.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-gray-800 border-b border-gray-300 pb-2 mb-4">Rotulagem da Saca (Espanhol)</h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-tag text-gray-500"></i></span>
+                                <span class="ml-3"><strong>Nome:</strong> "Café verde en grano".</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-tag text-gray-500"></i></span>
+                                <span class="ml-3"><strong>Peso Líquido:</strong> Ex: 60 kg.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-tag text-gray-500"></i></span>
+                                <span class="ml-3"><strong>Rastreabilidade:</strong> Lote + Data de Validade + País de Origem.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-tag text-gray-500"></i></span>
+                                <span class="ml-3"><strong>Importador:</strong> Nome da Empresa + Endereço na Espanha + Código RGSEAA.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 mt-0.5"><i class="fas fa-recycle text-green-600"></i></span>
+                                <span class="ml-3"><strong>Reciclagem:</strong> Símbolo indicando o descarte da saca (Juta/Plástico).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12 no-print">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <p>&copy; 2026 Plano de Negócios de Importação. Documento confidencial.</p>
+            <p class="mt-2 text-gray-500">Elaborado com base na legislação aduaneira UE/BR vigente.</p>
+        </div>
+    </footer>
+
+</body>
 </html>
