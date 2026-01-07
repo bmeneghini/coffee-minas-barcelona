@@ -337,7 +337,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> <!-- FIM DA SEÇÃO LOGÍSTICA (FECHAMENTO CORRIGIDO) -->
 
         <!-- Seção 5: Abertura da Empresa -->
         <section id="empresa" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-purple-600">
@@ -596,9 +596,9 @@
 
                 </div>
             </div>
-        </section>
+        </section> <!-- FIM DA SEÇÃO 6 CORRIGIDA -->
 
-        <!-- Seção 7: Análise de Lucratividade (NOVO) -->
+        <!-- Seção 7: Análise de Lucratividade (Atualizado - UI Light) -->
         <section id="analise" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-blue-600 print-break">
             <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <span class="bg-blue-100 text-blue-800 p-2 rounded-lg mr-3"><i class="fas fa-balance-scale"></i></span>
@@ -628,15 +628,10 @@
                             <span class="text-red-600">- € 6,00</span>
                         </div>
                         <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
-                            <span class="font-bold text-green-800">Lucro Bruto (por kg)</span>
+                            <span class="font-bold text-green-800">Margem de Contribuição (kg)</span>
                             <span class="font-bold text-green-600 text-lg">€ 4,00</span>
                         </div>
-                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem: 40%</div>
-                    </div>
-
-                    <div class="text-sm text-green-900">
-                        <p class="mb-2"><strong>Pros:</strong> Baixo esforço operacional; Venda em volume (sacas de 60kg); Risco zero de produto "velho".</p>
-                        <p><strong>Contras:</strong> Menor barreira de entrada para concorrentes; Margem absoluta menor.</p>
+                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem %: 40%</div>
                     </div>
                 </div>
 
@@ -651,57 +646,214 @@
                             <span class="font-bold text-gray-800">€ 22,00</span>
                         </div>
                         <div class="flex justify-between border-t border-dashed pt-2">
-                            <span class="text-gray-500">(-) Custo Verde Ajustado (Perda 18%*)</span>
+                            <span class="text-gray-500">(-) Custo Verde Ajustado (Perda 18%)</span>
                             <span class="text-red-600">- € 7,32</span>
                         </div>
                         <div class="flex justify-between">
-                            <span class="text-gray-500">(-) Serviço de Torra (Maquila)</span>
-                            <span class="text-red-600">- € 3,50</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">(-) Embalagem (Pacote + Válvula)</span>
-                            <span class="text-red-600">- € 1,00</span>
+                            <span class="text-gray-500">(-) Torra + Embalagem</span>
+                            <span class="text-red-600">- € 4,50</span>
                         </div>
                         <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
-                            <span class="font-bold text-amber-800">Lucro Bruto (por kg)</span>
+                            <span class="font-bold text-amber-800">Margem de Contribuição (kg)</span>
                             <span class="font-bold text-amber-600 text-lg">€ 10,18</span>
                         </div>
-                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem: 46% | *Necessário 1.22kg verde p/ 1kg torrado</div>
-                    </div>
-                    
-                    <div class="text-sm text-amber-900">
-                        <p class="mb-2"><strong>Pros:</strong> Maior valor agregado; Fidelização da marca nas cafeterias.</p>
-                        <p><strong>Contras:</strong> Validade curta (3 meses); Logística de entrega fracionada; Gestão de embalagens.</p>
+                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem %: 46%</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Gráfico Comparativo -->
-            <div class="mt-8">
-                <h4 class="font-bold text-gray-800 mb-4 text-center">Comparativo de Lucro Líquido por Kg Vendido</h4>
-                <div class="flex flex-col gap-4 max-w-2xl mx-auto">
-                    <!-- Barra A -->
-                    <div class="flex items-center">
-                        <div class="w-32 text-sm font-bold text-green-800 text-right pr-4">Verde (Trading)</div>
-                        <div class="flex-1 bg-gray-100 rounded-r-lg h-10 relative overflow-hidden">
-                            <div class="absolute top-0 left-0 h-full bg-green-500 flex items-center px-3 text-white font-bold" style="width: 40%">
-                                € 4,00
-                            </div>
-                        </div>
+            <!-- SUBSEÇÃO: PONTO DE EQUILÍBRIO (BREAK EVEN) - UI CORRIGIDA -->
+            <div class="mt-8 bg-gray-50 rounded-xl p-8 border border-gray-200 text-gray-800">
+                <h3 class="text-xl font-bold mb-6 flex items-center text-gray-900">
+                    <i class="fas fa-chart-line mr-3 text-blue-600"></i> Análise de Break-Even (Ponto de Equilíbrio)
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                        <span class="block text-gray-500 text-xs uppercase tracking-wide mb-1">Custo Fixo Mensal</span>
+                        <span class="text-2xl font-bold text-gray-900">€ 510,00</span>
+                        <p class="text-xs text-gray-500 mt-2">Gestoria + Seg. Social + Armazém</p>
                     </div>
-                    <!-- Barra B -->
-                    <div class="flex items-center">
-                        <div class="w-32 text-sm font-bold text-amber-800 text-right pr-4">Torrado (Marca)</div>
-                        <div class="flex-1 bg-gray-100 rounded-r-lg h-10 relative overflow-hidden">
-                            <div class="absolute top-0 left-0 h-full bg-amber-500 flex items-center px-3 text-white font-bold shadow-lg" style="width: 100%">
-                                € 10,18
-                            </div>
+                    <!-- Card 2 -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 border-l-4 border-l-green-500 shadow-sm">
+                        <span class="block text-gray-500 text-xs uppercase tracking-wide mb-1">Break-Even (Verde)</span>
+                        <div class="flex items-end gap-2">
+                            <span class="text-3xl font-bold text-green-600">128 kg</span>
+                            <span class="text-sm text-gray-500 mb-1">/mês</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Aprox. <strong>2,1 Sacas</strong> para pagar a conta.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-white p-4 rounded-lg border border-gray-200 border-l-4 border-l-amber-500 shadow-sm">
+                        <span class="block text-gray-500 text-xs uppercase tracking-wide mb-1">Break-Even (Torrado)</span>
+                        <div class="flex items-end gap-2">
+                            <span class="text-3xl font-bold text-amber-600">50 kg</span>
+                            <span class="text-sm text-gray-500 mb-1">/mês</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Apenas <strong>50 pacotes de 1kg</strong> pagam a estrutura.</p>
+                    </div>
+                </div>
+
+                <!-- Gráfico SVG Simulado -->
+                <div class="bg-white rounded-lg p-4 border border-gray-200 relative overflow-hidden shadow-sm">
+                    <h4 class="text-sm font-bold text-center mb-4 text-gray-700">Simulação Visual: Vendas Projetadas vs. Sobrevivência</h4>
+                    
+                    <div class="relative h-64 w-full">
+                        <!-- Eixo Y (Labels) -->
+                        <div class="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-400 pointer-events-none z-10">
+                            <span>2.000kg</span>
+                            <span>1.500kg</span>
+                            <span>1.000kg</span>
+                            <span>500kg</span>
+                            <span>0kg</span>
+                        </div>
+
+                        <!-- SVG Chart Area -->
+                        <svg class="absolute inset-0 w-full h-full pl-12 pb-6" preserveAspectRatio="none" viewBox="0 0 600 300">
+                            <!-- Grid Lines -->
+                            <line x1="0" y1="0" x2="600" y2="0" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4" />
+                            <line x1="0" y1="75" x2="600" y2="75" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4" />
+                            <line x1="0" y1="150" x2="600" y2="150" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4" />
+                            <line x1="0" y1="225" x2="600" y2="225" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4" />
+                            
+                            <!-- Area de "Lucro" (acima de 128kg) -->
+                            <rect x="0" y="0" width="600" height="280" fill="rgba(16, 185, 129, 0.08)" />
+                            
+                            <!-- Linha Break Even (128kg = ~19px from bottom scaled) -->
+                            <line x1="0" y1="280" x2="600" y2="280" stroke="#EF4444" stroke-width="2" />
+                            <text x="10" y="275" fill="#EF4444" font-size="10" font-weight="bold">LINHA DE PAGAMENTO (CUSTOS FIXOS)</text>
+
+                            <!-- Linha de Vendas (Projeção) -->
+                            <polyline 
+                                points="50,210 150,210 250,165 350,120 450,75 550,30" 
+                                fill="none" 
+                                stroke="#3B82F6" 
+                                stroke-width="4" 
+                                marker-end="url(#dot)"
+                            />
+                            
+                            <!-- Dots for points -->
+                            <circle cx="50" cy="210" r="4" fill="#3B82F6" />
+                            <circle cx="150" cy="210" r="4" fill="#3B82F6" />
+                            <circle cx="250" cy="165" r="4" fill="#3B82F6" />
+                            <circle cx="350" cy="120" r="4" fill="#3B82F6" />
+                            <circle cx="450" cy="75" r="4" fill="#3B82F6" />
+                            <circle cx="550" cy="30" r="4" fill="#3B82F6" />
+
+                            <!-- Labels on chart -->
+                            <text x="50" y="200" fill="#374151" font-size="10" text-anchor="middle" font-weight="bold">600kg</text>
+                            <text x="550" y="20" fill="#374151" font-size="10" text-anchor="middle" font-weight="bold">1.800kg</text>
+                        </svg>
+
+                        <!-- Eixo X (Meses) -->
+                        <div class="absolute bottom-0 left-0 w-full pl-12 flex justify-between text-xs text-gray-500">
+                            <span class="w-1/6 text-center">Mês 1</span>
+                            <span class="w-1/6 text-center">Mês 2</span>
+                            <span class="w-1/6 text-center">Mês 3</span>
+                            <span class="w-1/6 text-center">Mês 4</span>
+                            <span class="w-1/6 text-center">Mês 5</span>
+                            <span class="w-1/6 text-center">Mês 6</span>
                         </div>
                     </div>
                 </div>
-                <p class="text-center text-xs text-gray-500 mt-4 italic">
-                    Conclusão: Embora o café torrado gere <strong>2.5x mais lucro por kg</strong>, ele exige um esforço de venda e logística muito superior. A recomendação é iniciar com o Verde para garantir fluxo de caixa e introduzir o Torrado gradualmente.
+            </div>
+
+            <!-- SUBSEÇÃO: ESCALONAMENTO COM CAIXA LIVRE -->
+            <div class="border-t-2 border-gray-200 pt-8 mt-8">
+                <h3 class="text-xl font-bold text-blue-900 mb-6 flex items-center">
+                    <i class="fas fa-money-bill-wave mr-2"></i> Fluxo de Caixa Livre (Simulação 6 Meses)
+                </h3>
+                
+                <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+                    A tabela abaixo projeta o resultado financeiro final ("dinheiro no bolso") após o pagamento do produto, impostos e da estrutura fixa da empresa (€ 510,00/mês).
                 </p>
+
+                <!-- Tabela de Escalonamento -->
+                <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-sm mb-8">
+                    <table class="min-w-full divide-y divide-gray-200 text-sm text-center">
+                        <thead class="bg-gray-100 text-gray-700 font-bold uppercase text-xs">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Mês</th>
+                                <th class="px-4 py-3">Vendas (kg)</th>
+                                <th class="px-4 py-3 bg-gray-50 border-r text-gray-500">Custos Fixos</th>
+                                <th class="px-4 py-3 bg-green-50 text-green-800 border-b-2 border-green-200">Cenário A<br>Lucro Líquido Real</th>
+                                <th class="px-4 py-3 bg-amber-50 text-amber-800 border-b-2 border-amber-200">Cenário B<br>Lucro Líquido Real</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 bg-white">
+                            <!-- Mês 1 -->
+                            <tr>
+                                <td class="px-4 py-3 text-left font-bold text-gray-900">Mês 1</td>
+                                <td class="px-4 py-3 text-gray-600">600</td>
+                                <td class="px-4 py-3 bg-gray-50 text-red-400 text-xs border-r">- € 510</td>
+                                <td class="px-4 py-3 font-medium text-green-700">€ 1.890</td>
+                                <td class="px-4 py-3 font-medium text-amber-700">€ 4.490</td>
+                            </tr>
+                            <!-- Mês 2 -->
+                            <tr>
+                                <td class="px-4 py-3 text-left font-bold text-gray-900">Mês 2</td>
+                                <td class="px-4 py-3 text-gray-600">600</td>
+                                <td class="px-4 py-3 bg-gray-50 text-red-400 text-xs border-r">- € 510</td>
+                                <td class="px-4 py-3 font-medium text-green-700">€ 1.890</td>
+                                <td class="px-4 py-3 font-medium text-amber-700">€ 4.490</td>
+                            </tr>
+                            <!-- Mês 3 -->
+                            <tr>
+                                <td class="px-4 py-3 text-left font-bold text-gray-900">Mês 3</td>
+                                <td class="px-4 py-3 text-gray-600">900</td>
+                                <td class="px-4 py-3 bg-gray-50 text-red-400 text-xs border-r">- € 510</td>
+                                <td class="px-4 py-3 font-medium text-green-700">€ 3.090</td>
+                                <td class="px-4 py-3 font-medium text-amber-700">€ 6.990</td>
+                            </tr>
+                            <!-- Mês 4 -->
+                            <tr>
+                                <td class="px-4 py-3 text-left font-bold text-gray-900">Mês 4</td>
+                                <td class="px-4 py-3 text-gray-600">1.200</td>
+                                <td class="px-4 py-3 bg-gray-50 text-red-400 text-xs border-r">- € 510</td>
+                                <td class="px-4 py-3 font-medium text-green-700">€ 4.290</td>
+                                <td class="px-4 py-3 font-medium text-amber-700">€ 9.490</td>
+                            </tr>
+                            <!-- Mês 5 -->
+                            <tr>
+                                <td class="px-4 py-3 text-left font-bold text-gray-900">Mês 5</td>
+                                <td class="px-4 py-3 text-gray-600">1.500</td>
+                                <td class="px-4 py-3 bg-gray-50 text-red-400 text-xs border-r">- € 510</td>
+                                <td class="px-4 py-3 font-medium text-green-700">€ 5.490</td>
+                                <td class="px-4 py-3 font-medium text-amber-700">€ 11.990</td>
+                            </tr>
+                            <!-- Mês 6 -->
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-3 text-left font-bold text-gray-900">Mês 6</td>
+                                <td class="px-4 py-3 text-gray-600">1.800</td>
+                                <td class="px-4 py-3 bg-gray-50 text-red-400 text-xs border-r">- € 510</td>
+                                <td class="px-4 py-3 font-bold text-green-800">€ 6.690</td>
+                                <td class="px-4 py-3 font-bold text-amber-800">€ 14.490</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="bg-gray-800 text-white uppercase text-xs">
+                            <tr>
+                                <td class="px-4 py-4 text-left font-bold" colspan="3">Caixa Livre Acumulado (Após 6 Meses)</td>
+                                <td class="px-4 py-4 text-green-400 text-lg font-bold">€ 23.340</td>
+                                <td class="px-4 py-4 text-amber-400 text-lg font-bold">€ 51.940</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-lightbulb text-yellow-500"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <strong>Margem de Segurança:</strong> Como o seu Break-Even é de apenas 128kg, e você começa vendendo 600kg, sua operação já nasce com uma "gordura" de segurança de <strong>368%</strong> acima do ponto crítico. Isso é excelente para a saúde financeira inicial.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </section>
