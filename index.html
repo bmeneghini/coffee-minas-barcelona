@@ -93,7 +93,7 @@
             </div>
         </section>
 
-        <!-- Seção 2: Análise de Mercado (ATUALIZADA) -->
+        <!-- Seção 2: Análise de Mercado (ATUALIZADA E REORGANIZADA) -->
         <section id="mercado" class="bg-white rounded-lg shadow-lg p-8 mb-8 border-t-4 border-yellow-500">
             <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <span class="bg-yellow-100 text-yellow-800 p-2 rounded-lg mr-3"><i class="fas fa-chart-line"></i></span>
@@ -122,63 +122,124 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-8 items-start">
+            <!-- Dados Históricos e Cadeia de Valor (Full Width) -->
+            <div class="space-y-8 mb-8">
                 <!-- Evolução Histórica -->
-                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                    <div class="bg-gray-100 px-4 py-2 border-b border-gray-200">
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden w-full">
+                    <div class="bg-gray-100 px-6 py-3 border-b border-gray-200">
                          <h3 class="font-bold text-sm text-gray-800">Evolução do Mercado (Estimativa 2022-2025)</h3>
                     </div>
                     <table class="min-w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 uppercase">
                             <tr>
-                                <th class="px-4 py-2 text-left">Ano</th>
-                                <th class="px-4 py-2 text-right">Consumo (Ton)</th>
-                                <th class="px-4 py-2 text-left">Tendência Chave</th>
+                                <th class="px-6 py-3 text-left">Ano</th>
+                                <th class="px-6 py-3 text-right">Consumo Total (Ton)</th>
+                                <th class="px-6 py-3 text-left">Tendência Chave do Período</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
                             <tr>
-                                <td class="px-4 py-2 font-bold text-gray-700">2022</td>
-                                <td class="px-4 py-2 text-right">~198.000</td>
-                                <td class="px-4 py-2 text-xs text-gray-500">Recuperação Pós-Pandemia (Horeca)</td>
+                                <td class="px-6 py-3 font-bold text-gray-700">2022</td>
+                                <td class="px-6 py-3 text-right">~198.000</td>
+                                <td class="px-6 py-3 text-gray-600">Recuperação Pós-Pandemia (Retomada Horeca).</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2 font-bold text-gray-700">2023</td>
-                                <td class="px-4 py-2 text-right">~205.000</td>
-                                <td class="px-4 py-2 text-xs text-gray-500">Inflação alta, foco em valor agregado</td>
+                                <td class="px-6 py-3 font-bold text-gray-700">2023</td>
+                                <td class="px-6 py-3 text-right">~205.000</td>
+                                <td class="px-6 py-3 text-gray-600">Inflação alta, consumidor buscando valor agregado.</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2 font-bold text-gray-700">2024</td>
-                                <td class="px-4 py-2 text-right">~207.500</td>
-                                <td class="px-4 py-2 text-xs text-gray-500">Expansão de Specialty Coffee (BCN)</td>
+                                <td class="px-6 py-3 font-bold text-gray-700">2024</td>
+                                <td class="px-6 py-3 text-right">~207.500</td>
+                                <td class="px-6 py-3 text-gray-600">Expansão acelerada de Specialty Coffee em Barcelona.</td>
                             </tr>
                             <tr class="bg-yellow-50">
-                                <td class="px-4 py-2 font-bold text-gray-900">2025*</td>
-                                <td class="px-4 py-2 text-right font-bold">~214.000</td>
-                                <td class="px-4 py-2 text-xs text-gray-600"><strong>Projeção:</strong> Alta demanda por origem única</td>
+                                <td class="px-6 py-3 font-bold text-gray-900">2025*</td>
+                                <td class="px-6 py-3 text-right font-bold">~214.000</td>
+                                <td class="px-6 py-3 text-gray-800"><strong>Projeção:</strong> Alta demanda por origem única e sustentabilidade (EUDR).</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <!-- Cadeia de Valor -->
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm h-full">
-                     <h3 class="font-bold text-sm text-gray-800 mb-3 text-center border-b border-gray-200 pb-2">Preços de Referência (Barcelona)</h3>
-                     <div class="space-y-3 text-sm">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Importação (Landed)</span>
-                            <span class="font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded">€ 5,50 - € 7,00</span>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 shadow-sm w-full">
+                     <h3 class="font-bold text-sm text-gray-800 mb-4 text-center border-b border-gray-200 pb-3">Preços de Referência e Margens (Cadeia Brasil-Barcelona)</h3>
+                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-center">
+                        <div class="bg-white p-3 rounded border border-gray-200">
+                            <span class="block text-gray-500 text-xs uppercase mb-1">Custo Origem (Brasil)</span>
+                            <span class="font-bold text-green-800 text-lg">€ 4,50</span>
+                            <span class="text-xs text-gray-400 block">Pago ao Produtor/Saca</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Venda B2B (Verde)</span>
-                            <span class="font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">€ 9,00 - € 12,00</span>
+                        <div class="bg-white p-3 rounded border border-gray-200 relative">
+                            <i class="fas fa-arrow-right absolute -left-3 top-1/2 transform -translate-y-1/2 text-gray-300 hidden md:block"></i>
+                            <span class="block text-gray-500 text-xs uppercase mb-1">Importação (Landed)</span>
+                            <span class="font-bold text-green-600 text-lg">€ 6,00</span>
+                            <span class="text-xs text-gray-400 block">Posto BCN (C/ Taxas)</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Venda B2B (Torrado)</span>
-                            <span class="font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded">€ 18,00 - € 28,00</span>
+                        <div class="bg-white p-3 rounded border border-gray-200 relative">
+                            <i class="fas fa-arrow-right absolute -left-3 top-1/2 transform -translate-y-1/2 text-gray-300 hidden md:block"></i>
+                            <span class="block text-gray-500 text-xs uppercase mb-1">Venda B2B (Verde)</span>
+                            <span class="font-bold text-blue-700 text-lg">€ 9,00 - 12,00</span>
+                            <span class="text-xs text-gray-400 block">Para Torrefadores</span>
                         </div>
-                        <p class="text-[10px] text-gray-400 mt-2 text-center">*Valores por kg para café Especial (84+).</p>
+                        <div class="bg-white p-3 rounded border border-gray-200 relative">
+                            <i class="fas fa-arrow-right absolute -left-3 top-1/2 transform -translate-y-1/2 text-gray-300 hidden md:block"></i>
+                            <span class="block text-gray-500 text-xs uppercase mb-1">Venda B2B (Torrado)</span>
+                            <span class="font-bold text-purple-700 text-lg">€ 18,00 - 28,00</span>
+                            <span class="text-xs text-gray-400 block">Para Cafeterias</span>
+                        </div>
                      </div>
+                     <p class="text-[10px] text-gray-400 mt-3 text-center italic">*Valores estimados por kg para café Especial (84+ SCA).</p>
+                </div>
+            </div>
+
+            <!-- Perfil do Cliente (ICP) - REPOSICIONADO -->
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 mb-8">
+                <h3 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-bullseye text-red-500 mr-2"></i> Perfil do Cliente Ideal (Target List)
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Coluna B2B -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 border-b border-gray-200 pb-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">B2B (Foco Principal)</span>
+                            <span class="text-xs text-gray-500">Volume e Recorrência</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                <span class="block font-bold text-sm text-gray-900 mb-1">Micro-Torrefações Independentes</span>
+                                <p class="text-xs text-gray-600">Pequenos negócios que torram 20-50kg/semana. Buscam microlotes exclusivos e relação direta com produtor.</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                <span class="block font-bold text-sm text-gray-900 mb-1">Cafeterias de Especialidade</span>
+                                <p class="text-xs text-gray-600">Lojas que não torram, mas buscam ter uma "marca própria" (Private Label) ou um café exclusivo no moinho.</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border border-gray-100 shadow-sm opacity-80">
+                                <span class="block font-bold text-sm text-gray-900 mb-1">Grandes Importadores (Benchmark)</span>
+                                <p class="text-xs text-gray-600">Players como <em>Mare Terra</em>. Atuam como validadores de mercado e potenciais parceiros para escoar grandes volumes no futuro.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna B2C -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 border-b border-gray-200 pb-2">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded">B2C (Nicho)</span>
+                            <span class="text-xs text-gray-500">Margem e Marca</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                <span class="block font-bold text-sm text-gray-900 mb-1">Home Baristas (Assinatura)</span>
+                                <p class="text-xs text-gray-600">Consumidores finais com equipamento profissional em casa. Compram tickets altos e valorizam a história da fazenda.</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border border-gray-100 shadow-sm">
+                                <span class="block font-bold text-sm text-gray-900 mb-1">Eventos e Feiras</span>
+                                <p class="text-xs text-gray-600">Venda direta em feiras gastronômicas de Barcelona (ex: Palo Alto Market) para gerar reconhecimento de marca.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -222,43 +283,6 @@
                         <li>Regulações ambientais da UE (EUDR) cada vez mais rígidas.</li>
                         <li>Competição com importadores estabelecidos.</li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- Perfil do Cliente (ICP) -->
-            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                <h3 class="font-bold text-lg text-gray-800 mb-4">Perfil do Cliente Ideal (Target List)</h3>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <!-- Cliente 1 -->
-                    <div class="bg-white p-4 rounded border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="bg-purple-100 text-purple-700 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold">1</span>
-                            <span class="font-bold text-sm text-gray-900">Micro-Torrefações</span>
-                        </div>
-                        <p class="text-xs text-gray-600 leading-snug">
-                            Pequenos negócios independentes que torram 20-50kg/semana. Buscam microlotes exclusivos e relação direta com produtor.
-                        </p>
-                    </div>
-                    <!-- Cliente 2 -->
-                    <div class="bg-white p-4 rounded border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="bg-blue-100 text-blue-700 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold">2</span>
-                            <span class="font-bold text-sm text-gray-900">Cafeterias Especiais</span>
-                        </div>
-                        <p class="text-xs text-gray-600 leading-snug">
-                            Lojas que não torram, mas buscam ter uma "marca própria" ou um café exclusivo no moinho para se diferenciar das franquias.
-                        </p>
-                    </div>
-                    <!-- Cliente 3 -->
-                    <div class="bg-white p-4 rounded border border-gray-200 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="bg-indigo-100 text-indigo-700 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold">3</span>
-                            <span class="font-bold text-sm text-gray-900">Grandes Importadores</span>
-                        </div>
-                        <p class="text-xs text-gray-600 leading-snug">
-                            <strong>(Benchmarking/Parceiros):</strong> Empresas estabelecidas como <em>Mare Terra</em>. Embora sejam concorrentes, representam o mercado de volume B2B e podem ser canais para lotes maiores no futuro.
-                        </p>
-                    </div>
                 </div>
             </div>
 
