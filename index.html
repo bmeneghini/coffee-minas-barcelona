@@ -390,7 +390,7 @@
                         <div class="bg-white p-3 rounded border border-gray-200 relative">
                             <i class="fas fa-arrow-right absolute -left-3 top-1/2 transform -translate-y-1/2 text-gray-300 hidden md:block"></i>
                             <span class="block text-gray-500 text-xs uppercase mb-1">Importação (Landed)</span>
-                            <span class="font-bold text-green-600 text-lg">€ 7,65</span>
+                            <span class="font-bold text-green-600 text-lg" data-calc="landed-cost">€ 7,65</span>
                             <span class="text-xs text-gray-400 block">Posto BCN (C/ Taxas)</span>
                         </div>
                         <div class="bg-white p-3 rounded border border-gray-200 relative">
@@ -1266,17 +1266,17 @@
                     <div class="bg-white rounded p-4 space-y-3 text-sm shadow-sm border border-green-100 mb-4">
                         <div class="flex justify-between">
                             <span class="text-gray-600">Preço de Venda (por kg)</span>
-                            <span class="font-bold text-gray-800">€ 10,00</span>
+                            <span class="font-bold text-gray-800" data-calc="cenario-a-preco-venda">€ 10,00</span>
                         </div>
                         <div class="flex justify-between border-t border-dashed pt-2">
                             <span class="text-gray-500">(-) Custo do Produto (Landed Cost)</span>
-                            <span class="text-red-600">- € 7,65</span>
+                            <span class="text-red-600" data-calc="cenario-a-custo">- € 7,65</span>
                         </div>
                         <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
                             <span class="font-bold text-green-800">Margem de Contribuição (kg)</span>
-                            <span class="font-bold text-green-600 text-lg">€ 2,35</span>
+                            <span class="font-bold text-green-600 text-lg" data-calc="cenario-a-margem">€ 2,35</span>
                         </div>
-                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem %: 23,5%</div>
+                        <div class="text-right text-xs text-gray-400 font-mono mt-1" data-calc="cenario-a-margem-pct">Margem %: 23,5%</div>
                     </div>
                 </div>
 
@@ -1288,21 +1288,21 @@
                     <div class="bg-white rounded p-4 space-y-3 text-sm shadow-sm border border-amber-100 mb-4">
                         <div class="flex justify-between">
                             <span class="text-gray-600">Preço de Venda (por kg)</span>
-                            <span class="font-bold text-gray-800">€ 22,00</span>
+                            <span class="font-bold text-gray-800" data-calc="cenario-b-preco-venda">€ 22,00</span>
                         </div>
                         <div class="flex justify-between border-t border-dashed pt-2">
                             <span class="text-gray-500">(-) Custo Verde Ajustado (Perda 18%)</span>
-                            <span class="text-red-600">- € 9,33</span>
+                            <span class="text-red-600" data-calc="cenario-b-custo-verde-ajustado">- € 9,33</span>
                         </div>
                         <div class="flex justify-between">
                             <span class="text-gray-500">(-) Torra + Embalagem</span>
-                            <span class="text-red-600">- € 4,50</span>
+                            <span class="text-red-600" data-calc="cenario-b-torra">- € 4,50</span>
                         </div>
                         <div class="flex justify-between border-t border-gray-200 pt-2 mt-1">
                             <span class="font-bold text-amber-800">Margem de Contribuição (kg)</span>
-                            <span class="font-bold text-amber-600 text-lg">€ 8,17</span>
+                            <span class="font-bold text-amber-600 text-lg" data-calc="cenario-b-margem">€ 8,17</span>
                         </div>
-                        <div class="text-right text-xs text-gray-400 font-mono mt-1">Margem %: 37%</div>
+                        <div class="text-right text-xs text-gray-400 font-mono mt-1" data-calc="cenario-b-margem-pct">Margem %: 37%</div>
                     </div>
                 </div>
             </div>
@@ -1909,163 +1909,169 @@
     </footer>
 
     <!-- Modal Calculadora de Cenários -->
-    <div id="modalCalculadora" class="hidden fixed inset-0 z-50 overflow-y-auto">
+    <div id="modalCalculadora" class="hidden fixed inset-0 z-50">
         <!-- Overlay -->
-        <div class="modal-overlay fixed inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        <div class="modal-overlay fixed inset-0 bg-black bg-opacity-60 transition-opacity"></div>
         
         <!-- Conteúdo do Modal -->
-        <div class="relative min-h-screen flex items-center justify-center p-4">
-            <div class="modal-content relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-                <!-- Header -->
-                <div class="sticky top-0 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-6 rounded-t-2xl">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-2xl font-bold flex items-center">
-                            <i class="fas fa-calculator mr-3"></i>
-                            Calculadora de Cenários
+        <div class="relative min-h-screen flex items-center justify-center p-6">
+            <div class="modal-content relative bg-white rounded-2xl shadow-2xl w-full max-w-7xl">
+                <!-- Header Compacto -->
+                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-4 rounded-t-2xl flex items-center justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold flex items-center">
+                            <i class="fas fa-sliders-h mr-2"></i>
+                            Ajustar Cenário
                         </h2>
-                        <button id="btnFecharModal" class="text-white hover:text-gray-200 transition-colors">
-                            <i class="fas fa-times text-2xl"></i>
-                        </button>
+                        <p class="text-indigo-100 text-xs mt-1">Configure os parâmetros do seu negócio</p>
                     </div>
-                    <p class="text-indigo-100 text-sm mt-2">Ajuste os parâmetros e veja o impacto em tempo real no seu plano de negócios</p>
+                    <button id="btnFecharModal" class="text-white hover:text-gray-200 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
                 </div>
                 
-                <div class="p-8 space-y-8">
-                    <!-- Seção: Preço do Café -->
-                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                            <i class="fas fa-seedling text-green-600 mr-2"></i>
-                            Preço do Café (Origem)
-                        </h3>
-                        
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Preço da Saca (60kg)
-                                </label>
-                                <div class="flex items-center gap-4">
-                                    <span class="text-sm text-gray-600 min-w-[80px]">R$ 1.800</span>
-                                    <input type="range" id="sliderPrecoSaca" min="1800" max="3500" step="50" value="2400" class="flex-1">
-                                    <span class="text-sm text-gray-600 min-w-[80px] text-right">R$ 3.500</span>
-                                </div>
-                                <div class="mt-3 flex items-center gap-3">
-                                    <span class="text-sm text-gray-600">R$</span>
-                                    <input type="number" id="inputPrecoSaca" value="2400" step="50" min="1800" max="3500" class="flex-1 px-4 py-2 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                                </div>
+                <!-- Grid Principal - 2 colunas em telas grandes -->
+                <div class="p-6 grid lg:grid-cols-2 gap-6">
+                    <!-- COLUNA 1: Inputs -->
+                    <div class="space-y-4">
+                        <!-- Preço do Café -->
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl border border-green-200">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-seedling text-green-600 mr-2"></i>
+                                <h3 class="font-bold text-gray-900 text-sm">Preço do Café</h3>
                             </div>
                             
-                            <div class="bg-white p-4 rounded-lg border border-green-200">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-600">→ Custo FOB:</span>
-                                    <span id="previewFOB" class="text-lg font-bold text-green-700">€ 6,40/kg</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Seção: Câmbio -->
-                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                            <i class="fas fa-exchange-alt text-blue-600 mr-2"></i>
-                            Taxa de Câmbio
-                        </h3>
-                        
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                    BRL → EUR (1 BRL = ? EUR)
+                            <div class="space-y-2">
+                                <label class="block text-xs font-semibold text-gray-700">
+                                    Saca 60kg (BRL)
                                 </label>
                                 <div class="flex items-center gap-3">
-                                    <input type="number" id="inputCambio" value="0.16" step="0.001" min="0.01" max="1" class="flex-1 px-4 py-2 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                    <span class="text-sm text-gray-600">EUR</span>
+                                    <span class="text-xs text-gray-600 w-16">R$ 1.800</span>
+                                    <input type="range" id="sliderPrecoSaca" min="1800" max="3500" step="50" value="2400" class="flex-1">
+                                    <span class="text-xs text-gray-600 w-16 text-right">R$ 3.500</span>
+                                </div>
+                                <input type="number" id="inputPrecoSaca" value="2400" step="50" min="1800" max="3500" class="w-full px-3 py-2 text-sm border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <div class="bg-white p-2 rounded border border-green-200 flex justify-between items-center">
+                                    <span class="text-xs text-gray-600">Custo FOB:</span>
+                                    <span id="previewFOB" class="text-sm font-bold text-green-700">€ 6,40/kg</span>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Câmbio -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-200">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-exchange-alt text-blue-600 mr-2"></i>
+                                <h3 class="font-bold text-gray-900 text-sm">Câmbio BRL/EUR</h3>
+                            </div>
                             
-                            <div class="bg-white p-4 rounded-lg border border-blue-200">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-600">→ Equivalente:</span>
-                                    <span id="previewCambioInverso" class="text-lg font-bold text-blue-700">1 EUR = R$ 6,25</span>
+                            <div class="space-y-2">
+                                <label class="block text-xs font-semibold text-gray-700">
+                                    1 BRL = ? EUR
+                                </label>
+                                <input type="number" id="inputCambio" value="0.16" step="0.001" min="0.01" max="1" class="w-full px-3 py-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <div class="bg-white p-2 rounded border border-blue-200 flex justify-between items-center">
+                                    <span class="text-xs text-gray-600">Equivalente:</span>
+                                    <span id="previewCambioInverso" class="text-sm font-bold text-blue-700">1 EUR = R$ 6,25</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Custos Logísticos -->
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl border border-purple-200">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-ship text-purple-600 mr-2"></i>
+                                <h3 class="font-bold text-gray-900 text-sm">Custos Logísticos (EUR)</h3>
+                            </div>
+                            
+                            <div class="grid grid-cols-3 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                        Frete
+                                    </label>
+                                    <input type="number" id="inputFrete" value="600" step="50" min="0" class="w-full px-2 py-2 text-sm border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                        THC
+                                    </label>
+                                    <input type="number" id="inputTHC" value="500" step="50" min="0" class="w-full px-2 py-2 text-sm border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                        Torra
+                                    </label>
+                                    <input type="number" id="inputTorra" value="250" step="50" min="0" class="w-full px-2 py-2 text-sm border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Seção: Custos Logísticos -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                            <i class="fas fa-ship text-purple-600 mr-2"></i>
-                            Custos Logísticos
-                        </h3>
-                        
-                        <div class="space-y-4">
-                            <div class="grid md:grid-cols-3 gap-4">
+                    <!-- COLUNA 2: Preços de Venda + Resumo -->
+                    <div class="space-y-4">
+                        <!-- Preços de Venda B2B -->
+                        <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-4 rounded-xl border border-emerald-200">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-tags text-emerald-600 mr-2"></i>
+                                <h3 class="font-bold text-gray-900 text-sm">Preços de Venda B2B (EUR/kg)</h3>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Frete Marítimo + Seguro
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                        Café Verde
                                     </label>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-sm text-gray-600">€</span>
-                                        <input type="number" id="inputFrete" value="600" step="50" min="0" class="flex-1 px-3 py-2 border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                    </div>
+                                    <input type="number" id="inputPrecoVerde" value="10.00" step="0.50" min="5" max="25" class="w-full px-3 py-2 text-sm border border-emerald-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                    <p class="text-xs text-gray-500 mt-1">Micro-torrefações</p>
                                 </div>
                                 
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        THC + Aduana BCN
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                        Café Torrado
                                     </label>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-sm text-gray-600">€</span>
-                                        <input type="number" id="inputTHC" value="500" step="50" min="0" class="flex-1 px-3 py-2 border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Torra de Amostras (50kg)
-                                    </label>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-sm text-gray-600">€</span>
-                                        <input type="number" id="inputTorra" value="250" step="50" min="0" class="flex-1 px-3 py-2 border border-purple-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                    </div>
+                                    <input type="number" id="inputPrecoTorrado" value="22.00" step="0.50" min="10" max="40" class="w-full px-3 py-2 text-sm border border-emerald-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                                    <p class="text-xs text-gray-500 mt-1">Cafeterias (maquila)</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Seção: Resumo do Impacto -->
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border-2 border-amber-300">
-                        <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                            <i class="fas fa-chart-line text-amber-600 mr-2"></i>
-                            Resumo do Impacto
-                        </h3>
                         
-                        <div class="grid md:grid-cols-3 gap-4">
-                            <div class="bg-white p-4 rounded-lg border border-amber-200">
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Custo Lote 600kg</div>
-                                <div id="resumoLote600" class="text-2xl font-bold text-amber-700">€ 3.840,00</div>
+                        <!-- Resumo do Impacto -->
+                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-4 rounded-xl border-2 border-amber-300">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-chart-line text-amber-600 mr-2"></i>
+                                <h3 class="font-bold text-gray-900 text-sm">Resumo do Impacto</h3>
                             </div>
                             
-                            <div class="bg-white p-4 rounded-lg border border-amber-200">
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Subtotal Mercadoria</div>
-                                <div id="resumoSubtotal" class="text-2xl font-bold text-amber-700">€ 5.190,00</div>
-                            </div>
-                            
-                            <div class="bg-white p-4 rounded-lg border border-amber-200">
-                                <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Capital Inicial</div>
-                                <div id="resumoCapitalTotal" class="text-2xl font-bold text-amber-700">€ 11.229,92</div>
+                            <div class="space-y-2">
+                                <div class="bg-white p-3 rounded-lg border border-amber-200">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Custo Lote 600kg</div>
+                                    <div id="resumoLote600" class="text-xl font-bold text-amber-700">€ 3.840,00</div>
+                                </div>
+                                
+                                <div class="bg-white p-3 rounded-lg border border-amber-200">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Subtotal Mercadoria</div>
+                                    <div id="resumoSubtotal" class="text-xl font-bold text-amber-700">€ 5.190,00</div>
+                                </div>
+                                
+                                <div class="bg-white p-3 rounded-lg border border-amber-200">
+                                    <div class="text-xs text-gray-500 uppercase tracking-wide mb-1">Capital Inicial Total</div>
+                                    <div id="resumoCapitalTotal" class="text-xl font-bold text-amber-700">€ 11.229,92</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Footer / Botões -->
-                <div class="sticky bottom-0 bg-gray-50 px-8 py-6 rounded-b-2xl border-t border-gray-200 flex justify-between items-center">
-                    <button id="btnRestaurarPadroes" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors flex items-center gap-2">
+                <div class="bg-gray-50 px-6 py-4 rounded-b-2xl border-t border-gray-200 flex justify-between items-center">
+                    <button id="btnRestaurarPadroes" class="px-5 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg transition-colors flex items-center gap-2 text-sm">
                         <i class="fas fa-undo"></i>
                         Restaurar Padrões
                     </button>
                     
-                    <button id="btnAplicar" class="px-8 py-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg flex items-center gap-2">
+                    <button id="btnAplicar" class="px-6 py-2.5 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg flex items-center gap-2 text-sm">
                         <i class="fas fa-check"></i>
                         Aplicar Alterações
                     </button>
@@ -2082,8 +2088,6 @@
         // CONSTANTES
         const SACA_KG = 60;
         const PALLET_KG = 600; // 10 sacas
-        const PRECO_VENDA_VERDE_KG = 10.00; // EUR (fixo)
-        const PRECO_VENDA_TORRADO_KG = 18.00; // EUR (fixo)
         const PERDA_TORRA = 0.18; // 18% de perda
         const CUSTO_TORRA_KG = 5.00; // EUR por kg torrado
         const CUSTO_FIXO_MENSAL = 454; // EUR
@@ -2097,7 +2101,9 @@
             taxaCambio: 0.16,
             freteMaritimo: 600,
             thcAduana: 500,
-            torraAmostras: 250
+            torraAmostras: 250,
+            precoVendaVerde: 10.00,
+            precoVendaTorrado: 22.00
         };
         
         // ESTADO GLOBAL
@@ -2158,12 +2164,12 @@
         }
         
         function calcularBreakEvenVerde() {
-            const margem = PRECO_VENDA_VERDE_KG - calcularCustoVarVerde();
+            const margem = estado.precoVendaVerde - calcularCustoVarVerde();
             return CUSTO_FIXO_MENSAL / margem;
         }
         
         function calcularBreakEvenTorrado() {
-            const margem = PRECO_VENDA_TORRADO_KG - calcularCustoVarTorrado();
+            const margem = estado.precoVendaTorrado - calcularCustoVarTorrado();
             return CUSTO_FIXO_MENSAL / margem;
         }
         
@@ -2175,13 +2181,13 @@
             const custoVarTorrado = calcularCustoVarTorrado();
             
             // Cenário A (Verde)
-            const receitaA = kg * PRECO_VENDA_VERDE_KG;
+            const receitaA = kg * estado.precoVendaVerde;
             const desembolsoA = (custoVarVerde * kg) + custoFixo + armazenagem;
             const lucroA = receitaA - desembolsoA;
             
             // Cenário B (Torrado)
             const kgTorrado = kg * (1 - PERDA_TORRA);
-            const receitaB = kgTorrado * PRECO_VENDA_TORRADO_KG;
+            const receitaB = kgTorrado * estado.precoVendaTorrado;
             const desembolsoB = (custoVarTorrado * kgTorrado) + custoFixo + armazenagem;
             const lucroB = receitaB - desembolsoB;
             
@@ -2268,6 +2274,48 @@
             const elemBreakEvenTorrado = document.querySelector('[data-calc="break-even-torrado"]');
             if (elemBreakEvenTorrado) elemBreakEvenTorrado.textContent = `${Math.ceil(breakEvenTorrado)} kg`;
             
+            // Seção 2: Landed Cost (Custo de Chegada)
+            const elemLandedCost = document.querySelector('[data-calc="landed-cost"]');
+            if (elemLandedCost) elemLandedCost.textContent = `€ ${formatNumero(custoVarVerde)}`;
+            
+            // Seção 7: Cenário A (Café Verde B2B)
+            const margemA = estado.precoVendaVerde - custoVarVerde;
+            const margemPctA = (margemA / estado.precoVendaVerde) * 100;
+            
+            const elemCenarioAPreco = document.querySelector('[data-calc="cenario-a-preco-venda"]');
+            if (elemCenarioAPreco) elemCenarioAPreco.textContent = `€ ${formatNumero(estado.precoVendaVerde)}`;
+            
+            const elemCenarioACusto = document.querySelector('[data-calc="cenario-a-custo"]');
+            if (elemCenarioACusto) elemCenarioACusto.textContent = `- € ${formatNumero(custoVarVerde)}`;
+            
+            const elemCenarioAMargem = document.querySelector('[data-calc="cenario-a-margem"]');
+            if (elemCenarioAMargem) elemCenarioAMargem.textContent = `€ ${formatNumero(margemA)}`;
+            
+            const elemCenarioAMargemPct = document.querySelector('[data-calc="cenario-a-margem-pct"]');
+            if (elemCenarioAMargemPct) elemCenarioAMargemPct.textContent = `Margem %: ${formatNumero(margemPctA)}%`;
+            
+            // Seção 7: Cenário B (Café Torrado - Marca Própria)
+            const custoVerdeAjustado = custoVarVerde / (1 - PERDA_TORRA); // Ajuste pela perda de 18%
+            const custoTorraEmbalagem = 4.50; // EUR fixo (torra + embalagem)
+            const margemB = estado.precoVendaTorrado - custoVerdeAjustado - custoTorraEmbalagem;
+            const margemPctB = (margemB / estado.precoVendaTorrado) * 100;
+            
+            const elemCenarioBPreco = document.querySelector('[data-calc="cenario-b-preco-venda"]');
+            if (elemCenarioBPreco) elemCenarioBPreco.textContent = `€ ${formatNumero(estado.precoVendaTorrado)}`;
+            
+            const elemCenarioBCustoVerde = document.querySelector('[data-calc="cenario-b-custo-verde-ajustado"]');
+            if (elemCenarioBCustoVerde) elemCenarioBCustoVerde.textContent = `- € ${formatNumero(custoVerdeAjustado)}`;
+            
+            const elemCenarioBTorra = document.querySelector('[data-calc="cenario-b-torra"]');
+            if (elemCenarioBTorra) elemCenarioBTorra.textContent = `- € ${formatNumero(custoTorraEmbalagem)}`;
+            
+            const elemCenarioBMargem = document.querySelector('[data-calc="cenario-b-margem"]');
+            if (elemCenarioBMargem) elemCenarioBMargem.textContent = `€ ${formatNumero(margemB)}`;
+            
+            const elemCenarioBMargemPct = document.querySelector('[data-calc="cenario-b-margem-pct"]');
+            if (elemCenarioBMargemPct) elemCenarioBMargemPct.textContent = `Margem %: ${formatNumero(margemPctB)}%`;
+
+            
             // Tabela de Fluxo de Caixa
             const pallets = [1, 2, 3, 4, 5, 10, 25, 50, 100];
             pallets.forEach(num => {
@@ -2322,7 +2370,9 @@
                         taxaCambio: parsed.taxaCambio || PADROES.taxaCambio,
                         freteMaritimo: parsed.freteMaritimo || PADROES.freteMaritimo,
                         thcAduana: parsed.thcAduana || PADROES.thcAduana,
-                        torraAmostras: parsed.torraAmostras || PADROES.torraAmostras
+                        torraAmostras: parsed.torraAmostras || PADROES.torraAmostras,
+                        precoVendaVerde: parsed.precoVendaVerde || PADROES.precoVendaVerde,
+                        precoVendaTorrado: parsed.precoVendaTorrado || PADROES.precoVendaTorrado
                     };
                 }
             } catch (e) {
@@ -2362,6 +2412,8 @@
             document.getElementById('inputFrete').value = estado.freteMaritimo;
             document.getElementById('inputTHC').value = estado.thcAduana;
             document.getElementById('inputTorra').value = estado.torraAmostras;
+            document.getElementById('inputPrecoVerde').value = estado.precoVendaVerde;
+            document.getElementById('inputPrecoTorrado').value = estado.precoVendaTorrado;
         }
         
         function aplicarAlteracoes() {
@@ -2511,6 +2563,24 @@
                 let valor = parseFloat(this.value);
                 if (isNaN(valor) || valor < 0) valor = PADROES.torraAmostras;
                 estado.torraAmostras = valor;
+                atualizarPreviewModal();
+            });
+            
+            // Input Preço Venda Verde
+            document.getElementById('inputPrecoVerde').addEventListener('input', function() {
+                let valor = parseFloat(this.value);
+                if (isNaN(valor) || valor < 5) valor = PADROES.precoVendaVerde;
+                if (valor > 25) valor = 25;
+                estado.precoVendaVerde = valor;
+                atualizarPreviewModal();
+            });
+            
+            // Input Preço Venda Torrado
+            document.getElementById('inputPrecoTorrado').addEventListener('input', function() {
+                let valor = parseFloat(this.value);
+                if (isNaN(valor) || valor < 10) valor = PADROES.precoVendaTorrado;
+                if (valor > 40) valor = 40;
+                estado.precoVendaTorrado = valor;
                 atualizarPreviewModal();
             });
             
