@@ -1360,131 +1360,215 @@
                 </h3>
                 
                 <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-                    A tabela abaixo projeta o <strong>Desembolso Total</strong> e o <strong>Lucro Líquido</strong> baseando-se na venda integral de lotes (Pallets), independente do tempo levado para vender.
-                    <br><span class="text-xs italic text-gray-500">*Cálculo considera diluição dos custos fixos base (€454) + armazenagem variável (€40/pallet).</span>
+                    A tabela abaixo projeta receitas, custos detalhados e lucro líquido para diferentes volumes de operação.
+                    <br><span class="text-xs italic text-gray-500">*1 Container = 20 Pallets = 12.000kg | 1 Pallet = 600kg | Custos fixos mensais: €454 + Armazenagem: €40/pallet/mês</span>
                 </p>
 
-                <!-- Tabela de Escalonamento -->
+                <!-- Tabela de Escalonamento Expandida -->
                 <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-sm mb-8">
-                    <table class="min-w-full divide-y divide-gray-200 text-sm text-center">
-                        <thead class="bg-gray-100 text-gray-700 font-bold uppercase text-xs">
+                    <table class="min-w-full divide-y divide-gray-200 text-xs">
+                        <thead class="bg-gradient-to-r from-gray-700 to-gray-800 text-white font-bold uppercase">
                             <tr>
-                                <th class="px-3 py-3 text-left border-r">Volume (Pallets)</th>
-                                <!-- Cenário A -->
-                                <th class="px-3 py-3 bg-green-50 text-green-800 border-r border-green-200">Receita A</th>
-                                <th class="px-3 py-3 bg-green-50 text-green-800">Desembolso A<br><span class="text-[10px] font-normal">(Custo Total)</span></th>
-                                <th class="px-3 py-3 bg-green-100 text-green-900 border-r border-green-200">Lucro Líq. A</th>
-                                <!-- Cenário B -->
-                                <th class="px-3 py-3 bg-amber-50 text-amber-800 border-r border-amber-200">Receita B</th>
-                                <th class="px-3 py-3 bg-amber-50 text-amber-800">Desembolso B<br><span class="text-[10px] font-normal">(Custo Total)</span></th>
-                                <th class="px-3 py-3 bg-amber-100 text-amber-900">Lucro Líq. B</th>
+                                <th rowspan="2" class="px-4 py-3 text-left border-r border-gray-600 sticky left-0 bg-gray-800 z-10">Volume</th>
+                                <th rowspan="2" class="px-3 py-3 text-center border-r border-gray-600">Peso<br><span class="text-[10px] font-normal">(kg)</span></th>
+                                <!-- Cenário A: Verde -->
+                                <th colspan="5" class="px-3 py-3 text-center bg-green-700 border-x border-gray-600">CENÁRIO A: Café Verde (B2B Torrefações)</th>
+                                <!-- Cenário B: Torrado -->
+                                <th colspan="6" class="px-3 py-3 text-center bg-amber-700">CENÁRIO B: Café Torrado (Marca Própria)</th>
+                            </tr>
+                            <tr>
+                                <!-- Cenário A Headers -->
+                                <th class="px-3 py-2 bg-green-600 text-center border-r border-green-500">Receita</th>
+                                <th class="px-3 py-2 bg-green-600 text-center border-r border-green-500">Custo Var.</th>
+                                <th class="px-3 py-2 bg-green-600 text-center border-r border-green-500">Fixo+Arm.</th>
+                                <th class="px-3 py-2 bg-green-600 text-center border-r border-green-500">Desemp. Tot.</th>
+                                <th class="px-3 py-2 bg-green-700 font-bold text-center border-r border-gray-600">Lucro Líq.</th>
+                                <!-- Cenário B Headers -->
+                                <th class="px-3 py-2 bg-amber-600 text-center border-r border-amber-500">Receita</th>
+                                <th class="px-3 py-2 bg-amber-600 text-center border-r border-amber-500">Custo Verde</th>
+                                <th class="px-3 py-2 bg-amber-600 text-center border-r border-amber-500">Torra/Emb.</th>
+                                <th class="px-3 py-2 bg-amber-600 text-center border-r border-amber-500">Fixo+Arm.</th>
+                                <th class="px-3 py-2 bg-amber-600 text-center border-r border-amber-500">Desemp. Tot.</th>
+                                <th class="px-3 py-2 bg-amber-700 font-bold text-center">Lucro Líq.</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
                             <!-- 1 Pallet -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">1 <span class="text-xs font-normal text-gray-500 ml-1">(600kg)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-1">€ 6.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-1">- € 5.084</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-1">€ 916</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-1">€ 10.824</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-1">- € 8.792</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-1">€ 2.032</td>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-left font-bold text-gray-900 border-r sticky left-0 bg-white">1 Pallet</td>
+                                <td class="px-3 py-3 text-center text-gray-600 border-r">600</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-1">€ 6.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-1">€ 4.590</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-1">€ 494</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-1">€ 5.084</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-1">€ 916</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-1">€ 10.824</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-1">€ 5.598</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-1">€ 2.700</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-1">€ 494</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-1">€ 8.792</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-1">€ 2.032</td>
                             </tr>
-                            <!-- 2 Pallets -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">2 <span class="text-xs font-normal text-gray-500 ml-1">(1.200kg)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-2">€ 12.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-2">- € 9.714</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-2">€ 2.286</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-2">€ 21.648</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-2">- € 17.130</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-2">€ 4.518</td>
+                            <!-- Meio Container (10 Pallets) -->
+                            <tr class="hover:bg-gray-50 bg-blue-50/20">
+                                <td class="px-4 py-3 text-left font-bold text-gray-900 border-r sticky left-0 bg-blue-50/20">½ Container<br><span class="text-xs font-normal text-gray-500">(10 Pallets)</span></td>
+                                <td class="px-3 py-3 text-center text-gray-600 border-r">6.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-10">€ 60.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-10">€ 45.900</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-10">€ 854</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-10">€ 46.754</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-10">€ 13.246</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-10">€ 108.240</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-10">€ 55.980</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-10">€ 27.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-10">€ 854</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-10">€ 83.834</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-10">€ 24.406</td>
                             </tr>
-                            <!-- 3 Pallets -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">3 <span class="text-xs font-normal text-gray-500 ml-1">(1.800kg)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-3">€ 18.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-3">- € 14.344</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-3">€ 3.656</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-3">€ 32.472</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-3">- € 25.468</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-3">€ 7.004</td>
+                            <!-- 1 Container (20 Pallets) -->
+                            <tr class="hover:bg-gray-50 border-t-2 border-blue-300">
+                                <td class="px-4 py-3 text-left font-bold text-blue-900 border-r sticky left-0 bg-white">1 Container<br><span class="text-xs font-normal text-gray-500">(20 Pallets)</span></td>
+                                <td class="px-3 py-3 text-center font-semibold text-gray-700 border-r">12.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-20">€ 120.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-20">€ 91.800</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-20">€ 1.254</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-20">€ 93.054</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-20">€ 26.946</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-20">€ 216.480</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-20">€ 111.960</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-20">€ 54.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-20">€ 1.254</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-20">€ 167.214</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-20">€ 49.266</td>
                             </tr>
-                            <!-- 4 Pallets -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">4 <span class="text-xs font-normal text-gray-500 ml-1">(2.400kg)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-4">€ 24.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-4">- € 18.974</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-4">€ 5.026</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-4">€ 43.296</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-4">- € 33.806</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-4">€ 9.490</td>
+                            <!-- 2 Containers (40 Pallets) -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-left font-bold text-gray-900 border-r sticky left-0 bg-white">2 Containers<br><span class="text-xs font-normal text-gray-500">(40 Pallets)</span></td>
+                                <td class="px-3 py-3 text-center text-gray-600 border-r">24.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-40">€ 240.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-40">€ 183.600</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-40">€ 2.054</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-40">€ 185.654</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-40">€ 54.346</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-40">€ 432.960</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-40">€ 223.920</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-40">€ 108.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-40">€ 2.054</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-40">€ 333.974</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-40">€ 98.986</td>
                             </tr>
-                            <!-- 5 Pallets -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">5 <span class="text-xs font-normal text-gray-500 ml-1">(3.000kg)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-5">€ 30.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-5">- € 23.604</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-5">€ 6.396</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-5">€ 54.120</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-5">- € 42.144</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-5">€ 11.976</td>
+                            <!-- 3 Containers (60 Pallets) -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-left font-bold text-gray-900 border-r sticky left-0 bg-white">3 Containers<br><span class="text-xs font-normal text-gray-500">(60 Pallets)</span></td>
+                                <td class="px-3 py-3 text-center text-gray-600 border-r">36.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-60">€ 360.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-60">€ 275.400</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-60">€ 2.854</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-60">€ 278.254</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-60">€ 81.746</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-60">€ 649.440</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-60">€ 335.880</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-60">€ 162.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-60">€ 2.854</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-60">€ 500.734</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-60">€ 148.706</td>
                             </tr>
-                            <!-- 10 Pallets -->
-                            <tr class="border-t border-gray-200">
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">10 <span class="text-xs font-normal text-gray-500 ml-1">(6 ton)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-10">€ 60.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-10">- € 46.754</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-10">€ 13.246</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-10">€ 108.240</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-10">- € 83.834</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-10">€ 24.406</td>
+                            <!-- 4 Containers (80 Pallets) -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-left font-bold text-gray-900 border-r sticky left-0 bg-white">4 Containers<br><span class="text-xs font-normal text-gray-500">(80 Pallets)</span></td>
+                                <td class="px-3 py-3 text-center text-gray-600 border-r">48.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-80">€ 480.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-80">€ 367.200</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-80">€ 3.654</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-80">€ 370.854</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-80">€ 109.146</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-80">€ 865.920</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-80">€ 447.840</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-80">€ 216.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-80">€ 3.654</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-80">€ 667.494</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-80">€ 198.426</td>
                             </tr>
-                            <!-- 25 Pallets -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">25 <span class="text-xs font-normal text-gray-500 ml-1">(15 ton)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-25">€ 150.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-25">- € 116.204</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-25">€ 33.796</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-25">€ 270.600</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-25">- € 208.904</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-25">€ 61.696</td>
+                            <!-- 5 Containers (100 Pallets) -->
+                            <tr class="hover:bg-gray-50 border-t-2 border-indigo-300">
+                                <td class="px-4 py-3 text-left font-bold text-indigo-900 border-r sticky left-0 bg-white">5 Containers<br><span class="text-xs font-normal text-gray-500">(100 Pallets)</span></td>
+                                <td class="px-3 py-3 text-center font-semibold text-gray-700 border-r">60.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-3 text-right font-medium text-green-700 border-r border-green-100" data-calc="receita-a-100">€ 600.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="custo-var-a-100">€ 459.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-green-100" data-calc="fixo-a-100">€ 4.454</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-green-100" data-calc="desembolso-a-100">€ 463.454</td>
+                                <td class="px-3 py-3 text-right font-bold text-green-700 bg-green-50 border-r border-gray-300" data-calc="lucro-a-100">€ 136.546</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-3 text-right font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-100">€ 1.082.400</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="custo-verde-b-100">€ 559.800</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="torra-b-100">€ 270.000</td>
+                                <td class="px-3 py-3 text-right text-gray-600 border-r border-amber-100" data-calc="fixo-b-100">€ 4.454</td>
+                                <td class="px-3 py-3 text-right font-medium text-red-600 bg-red-50/30 border-r border-amber-100" data-calc="desembolso-b-100">€ 834.254</td>
+                                <td class="px-3 py-3 text-right font-bold text-amber-700 bg-amber-50" data-calc="lucro-b-100">€ 248.146</td>
                             </tr>
-                            <!-- 50 Pallets -->
-                            <tr>
-                                <td class="px-3 py-3 text-left font-bold text-gray-900 border-r">50 <span class="text-xs font-normal text-gray-500 ml-1">(30 ton)</span></td>
-                                <td class="px-3 py-3 font-medium text-green-700 border-r border-green-100" data-calc="receita-a-50">€ 300.000</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-green-50/50" data-calc="desembolso-a-50">- € 231.954</td>
-                                <td class="px-3 py-3 font-bold text-green-700 bg-green-100/30 border-r border-green-100" data-calc="lucro-a-50">€ 68.046</td>
-                                <td class="px-3 py-3 font-medium text-amber-700 border-r border-amber-100" data-calc="receita-b-50">€ 541.200</td>
-                                <td class="px-3 py-3 text-red-500 font-medium bg-amber-50/50" data-calc="desembolso-b-50">- € 417.354</td>
-                                <td class="px-3 py-3 font-bold text-amber-700 bg-amber-100/30" data-calc="lucro-b-50">€ 123.846</td>
-                            </tr>
-                            <!-- 100 Pallets -->
-                            <tr class="bg-gray-800 text-white border-t-4 border-blue-500">
-                                <td class="px-3 py-4 text-left font-bold border-r border-gray-600">100 <span class="text-xs font-normal text-gray-300 ml-1">(60 ton)</span></td>
-                                <td class="px-3 py-4 font-medium text-green-400 border-r border-gray-600" data-calc="receita-a-100">€ 600.000</td>
-                                <td class="px-3 py-4 font-medium text-red-300 bg-gray-700" data-calc="desembolso-a-100">- € 463.454</td>
-                                <td class="px-3 py-4 font-bold text-green-400 bg-gray-700 border-r border-gray-600 text-lg" data-calc="lucro-a-100">€ 136.546</td>
-                                <td class="px-3 py-4 font-medium text-amber-400 border-r border-gray-600" data-calc="receita-b-100">€ 1.082.400</td>
-                                <td class="px-3 py-4 font-medium text-red-300 bg-gray-700" data-calc="desembolso-b-100">- € 834.254</td>
-                                <td class="px-3 py-4 font-bold text-amber-400 bg-gray-700 text-lg" data-calc="lucro-b-100">€ 248.146</td>
+                            <!-- 10 Containers (200 Pallets) -->
+                            <tr class="bg-gradient-to-r from-gray-800 to-gray-900 text-white border-t-4 border-purple-500 hover:from-gray-700 hover:to-gray-800">
+                                <td class="px-4 py-4 text-left font-bold border-r border-gray-600 sticky left-0 bg-gray-800">10 Containers<br><span class="text-xs font-normal text-gray-300">(200 Pallets)</span></td>
+                                <td class="px-3 py-4 text-center font-bold text-purple-300 border-r border-gray-600">120.000</td>
+                                <!-- Cenário A -->
+                                <td class="px-3 py-4 text-right font-bold text-green-400 border-r border-gray-600" data-calc="receita-a-200">€ 1.200.000</td>
+                                <td class="px-3 py-4 text-right text-gray-300 border-r border-gray-600" data-calc="custo-var-a-200">€ 918.000</td>
+                                <td class="px-3 py-4 text-right text-gray-300 border-r border-gray-600" data-calc="fixo-a-200">€ 8.454</td>
+                                <td class="px-3 py-4 text-right font-medium text-red-300 bg-gray-700 border-r border-gray-600" data-calc="desembolso-a-200">€ 926.454</td>
+                                <td class="px-3 py-4 text-right font-bold text-green-300 bg-gray-700 text-base border-r border-gray-600" data-calc="lucro-a-200">€ 273.546</td>
+                                <!-- Cenário B -->
+                                <td class="px-3 py-4 text-right font-bold text-amber-400 border-r border-gray-600" data-calc="receita-b-200">€ 2.164.800</td>
+                                <td class="px-3 py-4 text-right text-gray-300 border-r border-gray-600" data-calc="custo-verde-b-200">€ 1.119.600</td>
+                                <td class="px-3 py-4 text-right text-gray-300 border-r border-gray-600" data-calc="torra-b-200">€ 540.000</td>
+                                <td class="px-3 py-4 text-right text-gray-300 border-r border-gray-600" data-calc="fixo-b-200">€ 8.454</td>
+                                <td class="px-3 py-4 text-right font-medium text-red-300 bg-gray-700 border-r border-gray-600" data-calc="desembolso-b-200">€ 1.668.054</td>
+                                <td class="px-3 py-4 text-right font-bold text-amber-300 bg-gray-700 text-base" data-calc="lucro-b-200">€ 496.746</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
-                    <div class="flex">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-info-circle text-blue-500"></i>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-leaf text-green-600"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-bold text-green-900">Cenário A: Verde (Menor Investimento)</h4>
+                                <p class="text-xs text-green-800 mt-1">
+                                    Requer menos capital de giro. Com 1 container (20 pallets), você desembolsa ~€93k e lucra €27k. 
+                                    Ideal para começar operações com menos risco financeiro.
+                                </p>
+                            </div>
                         </div>
-                        <div class="ml-3">
-                            <h4 class="text-sm font-bold text-blue-800">Conclusão sobre o Capital de Giro</h4>
-                            <p class="text-xs text-blue-700 mt-1">
-                                Observe a coluna <strong>"Desembolso Total"</strong>. No Cenário B (Torrado), embora o lucro seja maior, você precisará desembolsar quase <strong>€ 25.500</strong> a cada lote de 3 Pallets para sustentar a operação (compra de verde, serviços de torra, embalagens), enquanto no Cenário A o desembolso é de € 14.344. O Cenário B exige um fluxo de caixa muito mais robusto.
-                            </p>
+                    </div>
+
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-fire text-amber-600"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-sm font-bold text-amber-900">Cenário B: Torrado (Maior Margem)</h4>
+                                <p class="text-xs text-amber-800 mt-1">
+                                    Margens maiores mas requer 80% mais capital. Com 1 container, desembolso de €167k gera lucro de €49k. 
+                                    Necessita operação mais estruturada e fluxo de caixa robusto.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2182,16 +2266,24 @@
             
             // Cenário A (Verde)
             const receitaA = kg * estado.precoVendaVerde;
-            const desembolsoA = (custoVarVerde * kg) + custoFixo + armazenagem;
+            const custoVarA = custoVarVerde * kg;
+            const fixoA = custoFixo + armazenagem;
+            const desembolsoA = custoVarA + fixoA;
             const lucroA = receitaA - desembolsoA;
             
             // Cenário B (Torrado)
             const kgTorrado = kg * (1 - PERDA_TORRA);
             const receitaB = kgTorrado * estado.precoVendaTorrado;
-            const desembolsoB = (custoVarTorrado * kgTorrado) + custoFixo + armazenagem;
+            const custoVerdeB = custoVarVerde * kg; // Custo do verde antes da torra
+            const torraB = kgTorrado * CUSTO_TORRA_KG; // Custo da torra (€5/kg torrado)
+            const fixoB = custoFixo + armazenagem;
+            const desembolsoB = custoVerdeB + torraB + fixoB;
             const lucroB = receitaB - desembolsoB;
             
-            return { receitaA, desembolsoA, lucroA, receitaB, desembolsoB, lucroB };
+            return { 
+                receitaA, custoVarA, fixoA, desembolsoA, lucroA, 
+                receitaB, custoVerdeB, torraB, fixoB, desembolsoB, lucroB 
+            };
         }
         
         // ========================================
@@ -2317,31 +2409,42 @@
 
             
             // Tabela de Fluxo de Caixa
-            const pallets = [1, 2, 3, 4, 5, 10, 25, 50, 100];
+            const pallets = [1, 10, 20, 40, 60, 80, 100, 200]; // 1p, ½cont, 1cont, 2cont, 3cont, 4cont, 5cont, 10cont
             pallets.forEach(num => {
                 const dados = calcularFluxoCaixa(num);
                 
-                // Receita A
+                // Cenário A - Todas as colunas
                 const elemRecA = document.querySelector(`[data-calc="receita-a-${num}"]`);
                 if (elemRecA) elemRecA.textContent = formatEUR(dados.receitaA);
                 
-                // Desembolso A
-                const elemDesA = document.querySelector(`[data-calc="desembolso-a-${num}"]`);
-                if (elemDesA) elemDesA.textContent = `- ${formatEUR(dados.desembolsoA)}`;
+                const elemCustoVarA = document.querySelector(`[data-calc="custo-var-a-${num}"]`);
+                if (elemCustoVarA) elemCustoVarA.textContent = formatEUR(dados.custoVarA);
                 
-                // Lucro A
+                const elemFixoA = document.querySelector(`[data-calc="fixo-a-${num}"]`);
+                if (elemFixoA) elemFixoA.textContent = formatEUR(dados.fixoA);
+                
+                const elemDesA = document.querySelector(`[data-calc="desembolso-a-${num}"]`);
+                if (elemDesA) elemDesA.textContent = formatEUR(dados.desembolsoA);
+                
                 const elemLucA = document.querySelector(`[data-calc="lucro-a-${num}"]`);
                 if (elemLucA) elemLucA.textContent = formatEUR(dados.lucroA);
                 
-                // Receita B
+                // Cenário B - Todas as colunas
                 const elemRecB = document.querySelector(`[data-calc="receita-b-${num}"]`);
                 if (elemRecB) elemRecB.textContent = formatEUR(dados.receitaB);
                 
-                // Desembolso B
-                const elemDesB = document.querySelector(`[data-calc="desembolso-b-${num}"]`);
-                if (elemDesB) elemDesB.textContent = `- ${formatEUR(dados.desembolsoB)}`;
+                const elemCustoVerdeB = document.querySelector(`[data-calc="custo-verde-b-${num}"]`);
+                if (elemCustoVerdeB) elemCustoVerdeB.textContent = formatEUR(dados.custoVerdeB);
                 
-                // Lucro B
+                const elemTorraB = document.querySelector(`[data-calc="torra-b-${num}"]`);
+                if (elemTorraB) elemTorraB.textContent = formatEUR(dados.torraB);
+                
+                const elemFixoB = document.querySelector(`[data-calc="fixo-b-${num}"]`);
+                if (elemFixoB) elemFixoB.textContent = formatEUR(dados.fixoB);
+                
+                const elemDesB = document.querySelector(`[data-calc="desembolso-b-${num}"]`);
+                if (elemDesB) elemDesB.textContent = formatEUR(dados.desembolsoB);
+                
                 const elemLucB = document.querySelector(`[data-calc="lucro-b-${num}"]`);
                 if (elemLucB) elemLucB.textContent = formatEUR(dados.lucroB);
             });
